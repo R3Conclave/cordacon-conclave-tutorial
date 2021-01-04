@@ -1,0 +1,61 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.r3.conclave",
+    "module": "native-enclave-release",
+    "version": "0.4-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.6.1",
+      "buildId": "dwed36xq7jef7lqgidung2kjcu"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "native-enclave-release-0.4-SNAPSHOT.jar",
+          "url": "native-enclave-release-0.4-SNAPSHOT.jar",
+          "size": 33341856,
+          "sha512": "a5fdf843994ae024698eb294db7b94b8868615a962cc211832884b22fc45164ff543eb7f9d01236c012b4c0ba683ad74dfd9cfa4976159f0e84d2f2bd89a4049",
+          "sha256": "9bffe002e16e285cc5db323d2109e61f12c0f2047cddc19c98e889255c76c849",
+          "sha1": "44cdc18f2b0be47008e157de53f9d84bba56e06c",
+          "md5": "4a5a9847b8052b12c3ad010026a64b27"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "native-enclave-release-0.4-SNAPSHOT.jar",
+          "url": "native-enclave-release-0.4-SNAPSHOT.jar",
+          "size": 33341856,
+          "sha512": "a5fdf843994ae024698eb294db7b94b8868615a962cc211832884b22fc45164ff543eb7f9d01236c012b4c0ba683ad74dfd9cfa4976159f0e84d2f2bd89a4049",
+          "sha256": "9bffe002e16e285cc5db323d2109e61f12c0f2047cddc19c98e889255c76c849",
+          "sha1": "44cdc18f2b0be47008e157de53f9d84bba56e06c",
+          "md5": "4a5a9847b8052b12c3ad010026a64b27"
+        }
+      ]
+    }
+  ]
+}

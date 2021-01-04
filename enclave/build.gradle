@@ -1,0 +1,21 @@
+plugins {
+    id 'com.r3.conclave.enclave'
+}
+
+dependencies {
+    implementation project(":common")
+    implementation "com.r3.conclave:conclave-enclave"
+
+    testImplementation "com.r3.conclave:conclave-testing"
+}
+
+conclave {
+    runtime = avian
+    productID = 1
+    revocationLevel = 0
+
+    release {
+        signingType = privateKey
+        signingKey = file("../sample_private_key.pem")
+    }
+}

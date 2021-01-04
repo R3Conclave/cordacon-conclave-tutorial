@@ -1,0 +1,65 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.r3.conclave",
+    "module": "macos-binutils",
+    "version": "0.4-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.6.1",
+      "buildId": "dwed36xq7jef7lqgidung2kjcu"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.localToProject": "public",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "macos-binutils-0.4-SNAPSHOT.jar",
+          "url": "macos-binutils-0.4-SNAPSHOT.jar",
+          "size": 777821,
+          "sha512": "0340bd26801c5d375152fb5df0cac629629fb4f3906ad9428c32641c055231b118121fad9238b4d8326bde0a2b77d02139ba94ca8d7a03ebb296cbc120e2797c",
+          "sha256": "1a8d018403240fa7f413abcd26ebfbfefb9caaf79dde431a04ea8c67bae2e75d",
+          "sha1": "ef23d832caaa04e3a60ea375c11f6a5496b28873",
+          "md5": "99f5065dc1ee79079a9dad4c79f77e73"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.localToProject": "public",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "macos-binutils-0.4-SNAPSHOT.jar",
+          "url": "macos-binutils-0.4-SNAPSHOT.jar",
+          "size": 777821,
+          "sha512": "0340bd26801c5d375152fb5df0cac629629fb4f3906ad9428c32641c055231b118121fad9238b4d8326bde0a2b77d02139ba94ca8d7a03ebb296cbc120e2797c",
+          "sha256": "1a8d018403240fa7f413abcd26ebfbfefb9caaf79dde431a04ea8c67bae2e75d",
+          "sha1": "ef23d832caaa04e3a60ea375c11f6a5496b28873",
+          "md5": "99f5065dc1ee79079a9dad4c79f77e73"
+        }
+      ]
+    }
+  ]
+}

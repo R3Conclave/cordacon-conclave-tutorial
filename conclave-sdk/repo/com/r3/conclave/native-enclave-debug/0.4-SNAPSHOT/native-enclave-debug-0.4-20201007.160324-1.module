@@ -1,0 +1,61 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.r3.conclave",
+    "module": "native-enclave-debug",
+    "version": "0.4-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.6.1",
+      "buildId": "dwed36xq7jef7lqgidung2kjcu"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "native-enclave-debug-0.4-SNAPSHOT.jar",
+          "url": "native-enclave-debug-0.4-SNAPSHOT.jar",
+          "size": 39036106,
+          "sha512": "f030023581f659d915b2031bce976f3c3cbe25e2b7dc8813f2cd0f01354a7b85ba09ec5921e832cc3db6600ede161ca51f65bf7229a6a013bb3f721e02197a3a",
+          "sha256": "6026ad69384bc3bf8eb7cc92cc58707ffb688535b094a81932807606d15fbdb6",
+          "sha1": "560c49726e9beb7606e3301bf84cc58e64a8b133",
+          "md5": "dbe5b5ce1b7878721f1d4c1ef068124f"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "native-enclave-debug-0.4-SNAPSHOT.jar",
+          "url": "native-enclave-debug-0.4-SNAPSHOT.jar",
+          "size": 39036106,
+          "sha512": "f030023581f659d915b2031bce976f3c3cbe25e2b7dc8813f2cd0f01354a7b85ba09ec5921e832cc3db6600ede161ca51f65bf7229a6a013bb3f721e02197a3a",
+          "sha256": "6026ad69384bc3bf8eb7cc92cc58707ffb688535b094a81932807606d15fbdb6",
+          "sha1": "560c49726e9beb7606e3301bf84cc58e64a8b133",
+          "md5": "dbe5b5ce1b7878721f1d4c1ef068124f"
+        }
+      ]
+    }
+  ]
+}

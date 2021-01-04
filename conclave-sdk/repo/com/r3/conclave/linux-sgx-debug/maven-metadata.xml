@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.r3.conclave</groupId>
+  <artifactId>linux-sgx-debug</artifactId>
+  <versioning>
+    <latest>0.4-SNAPSHOT</latest>
+    <versions>
+      <version>0.4-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20201007160843</lastUpdated>
+  </versioning>
+</metadata>

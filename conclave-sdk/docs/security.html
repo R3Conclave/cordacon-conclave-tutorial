@@ -1,0 +1,900 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.2.2">
+    
+    
+      
+        <title>Security discussion - Conclave documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.a2408e81.min.css">
+      
+        <link rel="stylesheet" href="assets/stylesheets/palette.a46bcfb3.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#ef5350">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+        
+<link rel="preconnect dns-prefetch" href="https://www.google-analytics.com">
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-87760032-7","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="red" data-md-color-accent="red">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#secure-time-access" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="." title="Conclave documentation" class="md-header-nav__button md-logo" aria-label="Conclave documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Conclave documentation
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Security discussion
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="index.html" class="md-tabs__link">
+        Welcome
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="architecture.html" class="md-tabs__link md-tabs__link--active">
+          Development
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="machine-setup.html" class="md-tabs__link">
+          Operations
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Conclave documentation" class="md-nav__button md-logo" aria-label="Conclave documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Conclave documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="index.html" title="Welcome" class="md-nav__link">
+      Welcome
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="enclaves.html" title="Enclaves" class="md-nav__link">
+      Enclaves
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Development
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Development" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Development
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" checked>
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Conclave architecture
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Conclave architecture" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Conclave architecture
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="architecture.html" title="Architecture" class="md-nav__link">
+      Architecture
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="mail.html" title="Mail" class="md-nav__link">
+      Mail
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Security discussion
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="security.html" title="Security discussion" class="md-nav__link md-nav__link--active">
+      Security discussion
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#secure-time-access" class="md-nav__link">
+    Secure time access
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memento-attacks" class="md-nav__link">
+    Memento attacks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#side-channel-attacks" class="md-nav__link">
+    Side channel attacks
+  </a>
+  
+    <nav class="md-nav" aria-label="Side channel attacks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#architectural-attacks" class="md-nav__link">
+    Architectural attacks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#micro-architectural" class="md-nav__link">
+    Micro-architectural
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impact-of-side-channel-attacks" class="md-nav__link">
+    Impact of side channel attacks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Tutorial
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Tutorial" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Tutorial
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="tutorial.html" title="Compiling and running" class="md-nav__link">
+      Compiling and running
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="writing-hello-world.html" title="Writing hello world" class="md-nav__link">
+      Writing hello world
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="api/index.html" title="API" class="md-nav__link">
+      API
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Operations
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Operations" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Operations
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1">
+    
+    <label class="md-nav__link" for="nav-4-1">
+      Server deployment
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Server deployment" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Server deployment
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="machine-setup.html" title="Machine setup" class="md-nav__link">
+      Machine setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="ias.html" title="IAS" class="md-nav__link">
+      IAS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="signing.html" title="Enclave signing" class="md-nav__link">
+      Enclave signing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="renewability.html" title="Renewability" class="md-nav__link">
+      Renewability
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="faq.html" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#secure-time-access" class="md-nav__link">
+    Secure time access
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memento-attacks" class="md-nav__link">
+    Memento attacks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#side-channel-attacks" class="md-nav__link">
+    Side channel attacks
+  </a>
+  
+    <nav class="md-nav" aria-label="Side channel attacks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#architectural-attacks" class="md-nav__link">
+    Architectural attacks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#micro-architectural" class="md-nav__link">
+    Micro-architectural
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impact-of-side-channel-attacks" class="md-nav__link">
+    Impact of side channel attacks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                  <h1>Security discussion</h1>
+                
+                <p>In this section we discuss some security issues inherent to the enclave model which may not be immediately apparent.</p>
+<h2 id="secure-time-access">Secure time access<a class="headerlink" href="#secure-time-access" title="Permanent link">&para;</a></h2>
+<p>The <em>trusted computing base</em> is very small in the SGX architecture. Only the CPU and some support software needs to be
+trusted to work correctly. That means anything else in the computer <em>other</em> than the CPU is assumed to be broken or
+malicious, and defended against using encryption and authentication.</p>
+<p>This has implications for reading the system clock. The current time is maintained by a battery powered real-time clock chip
+outside the CPU, which can be tampered with by the untrusted machine owner at any time. For this reason inside the
+enclave the current time isn't available. Trying to read it will yield a default, unchanging timestamp. Additionally, 
+the enclave may be paused at any moment for an arbitrary duration without the enclave code being aware of that, so
+if you were to read a timestamp it might be very old at the moment you actually used it.</p>
+<p>For these reasons timestamping events requires special support and discussion. Future versions of Conclave will be
+usable together with <a href="https://www.corda.net">Corda</a>, a decentralised ledger technology that provides trusted 
+logical and real-time clocks suitable for ordering database transactions and recording an approximate UTC timestamp
+at which they occurred.</p>
+<p>If you need a timestamp without using Corda, you can get a signed timestamp from many sources. For instance doing an
+HTTP GET request to www.google.com will provide a reading from Google's clocks in the HTTP result headers.     </p>
+<h2 id="memento-attacks">Memento attacks<a class="headerlink" href="#memento-attacks" title="Permanent link">&para;</a></h2>
+<p>Your enclave has protected RAM which it uses to store normal, in-memory data. Reads are guaranteed to observe prior writes.</p>
+<p>But an enclave is just an ordinary piece of code running in an ordinary program. That means it cannot directly access
+hardware. Like any other program it has to ask the kernel to handle requests on its behalf, because the kernel is the
+only program running in the CPU's supervisor mode where hardware can be controlled ("ring 0" on Intel architecture chips).
+In fact, inside an enclave there is no direct access to the operating system at all. The only thing you can do is
+exchange messages with the host code. The host may choose to relay your requests through the kernel to the hardware
+honestly, or any of those components (host software, kernel, the hardware itself) may have been modified maliciously.
+The enclave protections are a feature of the <em>CPU</em>, not the entire computer, and the CPU maintains state only until
+it is reset or the power is lost.</p>
+<p>You can think of this another way. If the enclave stores some data to disk, nothing stops the owner of the computer
+stopping the enclave host process and then editing the files on disk.</p>
+<p>Because enclaves can generate encryption keys private to themselves, encryption and authentication can be used to stop
+the host editing the data. Data encrypted in this way is called <strong>sealed data</strong>. Sealed data can be re-requested from
+the operating system and decrypted inside the enclave.</p>
+<p>Conclave handles the sealing process for you. Unfortunately there's one class of attack encryption cannot stop. It
+must instead be considered in the design of your app. That attack is when the host gives you back older data than
+was requested. The system clock is controlled by the owner of the computer and so can't be relied on. Additionally
+the owner can kill and restart the host process whenever they like.</p>
+<p>Together this means an enclave's sense of time and ordering of events can be tampered with to create confusion. By
+snapshotting the stored (sealed, encrypted) data an enclave has provided after each network message from a client is
+delivered, the enclave can be "rewound" to any point. Then stored messages from the clients can be replayed back to
+the enclave in different orders, or with some messages dropped. We call this a Memento attack, after <a href="https://en.wikipedia.org/wiki/Memento_(film)">the film in which
+the protagonist has anterograde amenesia</a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>A full discussion of Memento attacks is beyond the scope of this document. The Conclave project strives to provide
+you with high level protocol constructs that take them into account, but when writing your own protocols you should
+consider carefully what happens when messages can be re-ordered and re-tried by the host.</p>
+</div>
+<h2 id="side-channel-attacks">Side channel attacks<a class="headerlink" href="#side-channel-attacks" title="Permanent link">&para;</a></h2>
+<p>Side channel attacks are a way to break encryption without actually defeating the underlying algorithms, by making very
+precise observations from the outside of a machine or program doing a secure computation. Those observations may be
+of timings or power draw fluctuations.</p>
+<p>Because enclaves run in an environment controlled by an untrusted host, we must assume the operator of the host hardware
+is doing these kinds of observations in an attempt to break the security of the enclave.</p>
+<p>Side channel attacks introduce a fundamental tradeoff between performance, scalability and security. A part of 
+Conclave's intended value proposition is to surface these tradeoffs to you in a way that's easy to understand and 
+control, whilst blocking as many attacks as possible automatically.</p>
+<p>Side channel attacks on enclaves can be divided into two categories:</p>
+<ol>
+<li>Architectural</li>
+<li>Micro-architectural</li>
+</ol>
+<p>These types are discussed more below.</p>
+<p>Because side channel attacks present tradeoffs between privacy and performance, analysing them requires a different 
+mindset to normal security analysis. Formally, we can say a secret has been leaked via a side channel if we can 
+learn even a single binary bit of data about an encrypted message. However often the leaked data doesn't matter or 
+isn't a secret worth protecting. In these cases it may be better to allow a limited amount of leakage to obtain
+better performance. Future versions of this guide and the Conclave API will assist you in studying and making these
+tradeoffs.</p>
+<p>A standard example is whether a message is of type A or type B, under the assumption that most apps have at least 
+two kinds of message that an enclave can process from clients. Careful requirements analysis may reveal that
+the number or sequencing of message types doesn't reveal any important information and thus doesn't need to be 
+protected: only the specific data within the messages.      </p>
+<h3 id="architectural-attacks">Architectural attacks<a class="headerlink" href="#architectural-attacks" title="Permanent link">&para;</a></h3>
+<p>Architectural side channel attacks exploit the nature, structure or specific code of your application architecture to 
+reveal secrets. </p>
+<p>Here is a non-exhaustive set of examples:</p>
+<ul>
+<li><strong>Message sizes</strong>. If your enclave is known to process only two kinds of message of around 1 kilobyte or 100 kilobytes
+  respectively, then the size of the encrypted message by itself leaks information about what kind of message it is.</li>
+<li><strong>Message processing time</strong>. The same as message sizes but with processing time, e.g. a message type that takes 1msec 
+  to process vs 100 msec can leak what kind of message it is by simply observing how much work the enclave does when
+  the host passes it the new data.</li>
+<li><strong>Storage access patterns</strong>. If your enclave doesn't access the database when processing a message of type A but does
+  when processing a message of type B, or accesses the database with a different sequence, number or type of accesses,
+  the host can learn the message type by observing those accesses.  </li>
+</ul>
+<p>Many of these techniques can be used to reveal fine grained information, not just message types. For instance if an
+encrypted piece of data contains a number that's then used to control a loop that does data lookups, counting the
+number of external data lookups reveals the number.</p>
+<p>Some kinds of architectural side channel attacks can be mitigated by Conclave for you, for instance, messages can be
+padded so all encrypted messages look the same size. This sort of approach works if message sizes don't vary too wildly
+and you can afford to use the bandwidth and storage to set all messages to their maximum possible size. How valuable it
+is in your situation is a topic for you to consider as you design your app.</p>
+<h3 id="micro-architectural">Micro-architectural<a class="headerlink" href="#micro-architectural" title="Permanent link">&para;</a></h3>
+<p>Enclave memory is encrypted. Micro-architectural side channel attacks exploit the inner workings of the CPU itself to 
+reveal information whilst it's being processed by the CPU in its normal unencrypted state.</p>
+<p>There are a variety of different attacks with varying details. They work by exploiting the speculative execution
+capability of the processor to make an enclave compute on invalid data, which can then be used to bypass normal security
+mechanisms and leak data out of the enclave - not via normal means (which the CPU doesn't allow) but by affecting the
+timing of subsequent operations which can then be measured.</p>
+<p>Micro-architectural side channel attacks can be resolved at a layer lower than the architecture of your own application.
+They often require reducing the performance of either the enclave or the entire host system however, so it's worth
+always planning for a large buffer of unused per-host performance.</p>
+<p>The mitigations suggested for the latest round of micro-architectural side channel attacks (load value injection or LVI 
+attacks) work by effectively disabling speculative execution when in enclave mode. Combined with the overhead of memory
+encryption, execution inside an enclave can run a lot slower than normal software running outside.</p>
+<h3 id="impact-of-side-channel-attacks">Impact of side channel attacks<a class="headerlink" href="#impact-of-side-channel-attacks" title="Permanent link">&para;</a></h3>
+<p>Not all enclaves operate on secret data. Some types of enclave are used for their auditable execution rather than to
+work with secret data unaccessible to the host. For those kinds of enclave it's sufficient to protect the signing keys
+rather than all data the enclave accesses. Other types of enclave work purely with secret data, but expect that the host
+isn't normally malicious: in this scenario enclaves are being used to slow down or stop attackers in the face of a 
+hacked host network. It thus makes up one part of a standard suite of security measures.   </p>
+<p>Because the performance/privacy tradeoff presented by side channel attacks can vary so widely, and this is an active area
+of academic research, the expectation is that every new Conclave version will provide new tools and tunable settings 
+to control their impact. This will continue for the lifespan of the product. As a developer it's your responsibility to
+both upgrade to new versions as they come out, and to take side channels into account when planning the architecture
+and capacity needs of your application.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="mail.html" title="Mail" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Mail
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="tutorial.html" title="Compiling and running" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Compiling and running
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="assets/javascripts/bundle.5f27aba8.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: ".",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "assets/javascripts/worker/search.27c6a5e6.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

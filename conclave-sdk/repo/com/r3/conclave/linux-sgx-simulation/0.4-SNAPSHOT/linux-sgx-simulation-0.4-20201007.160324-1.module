@@ -1,0 +1,61 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.r3.conclave",
+    "module": "linux-sgx-simulation",
+    "version": "0.4-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.6.1",
+      "buildId": "dwed36xq7jef7lqgidung2kjcu"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "linux-sgx-simulation-0.4-SNAPSHOT.jar",
+          "url": "linux-sgx-simulation-0.4-SNAPSHOT.jar",
+          "size": 7306268,
+          "sha512": "2f9170608a2b1477a3ba1dfb9e72099179e4dd0f08867ea628aaef72022cd3ff2f63d4bf930c34e14c0f0e4ef2731e04ef45211df6590bb865d70b4c80f2d13d",
+          "sha256": "e03b7e79b8707cdf0675ba8f55e32ce7ffca7ac6c3d128ba463350baee311f32",
+          "sha1": "631792895b0dd1fa03d94be24725aa7f9b3d29e6",
+          "md5": "d555bcb71aa9ee87f288aefdc2060774"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "linux-sgx-simulation-0.4-SNAPSHOT.jar",
+          "url": "linux-sgx-simulation-0.4-SNAPSHOT.jar",
+          "size": 7306268,
+          "sha512": "2f9170608a2b1477a3ba1dfb9e72099179e4dd0f08867ea628aaef72022cd3ff2f63d4bf930c34e14c0f0e4ef2731e04ef45211df6590bb865d70b4c80f2d13d",
+          "sha256": "e03b7e79b8707cdf0675ba8f55e32ce7ffca7ac6c3d128ba463350baee311f32",
+          "sha1": "631792895b0dd1fa03d94be24725aa7f9b3d29e6",
+          "md5": "d555bcb71aa9ee87f288aefdc2060774"
+        }
+      ]
+    }
+  ]
+}

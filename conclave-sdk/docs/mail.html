@@ -1,0 +1,1128 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.2.2">
+    
+    
+      
+        <title>Mail - Conclave documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.a2408e81.min.css">
+      
+        <link rel="stylesheet" href="assets/stylesheets/palette.a46bcfb3.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#ef5350">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+        
+<link rel="preconnect dns-prefetch" href="https://www.google-analytics.com">
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-87760032-7","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="red" data-md-color-accent="red">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mail" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="." title="Conclave documentation" class="md-header-nav__button md-logo" aria-label="Conclave documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Conclave documentation
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Mail
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="index.html" class="md-tabs__link">
+        Welcome
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="architecture.html" class="md-tabs__link md-tabs__link--active">
+          Development
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="machine-setup.html" class="md-tabs__link">
+          Operations
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Conclave documentation" class="md-nav__button md-logo" aria-label="Conclave documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Conclave documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="index.html" title="Welcome" class="md-nav__link">
+      Welcome
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="enclaves.html" title="Enclaves" class="md-nav__link">
+      Enclaves
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Development
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Development" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Development
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" checked>
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Conclave architecture
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Conclave architecture" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Conclave architecture
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="architecture.html" title="Architecture" class="md-nav__link">
+      Architecture
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Mail
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="mail.html" title="Mail" class="md-nav__link md-nav__link--active">
+      Mail
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#future-features" class="md-nav__link">
+    Future features
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-mail-for-storage" class="md-nav__link">
+    Using mail for storage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attacks-on-messaging" class="md-nav__link">
+    Attacks on messaging
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-does-mail-work" class="md-nav__link">
+    How does Mail work
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison-to-a-classical-architecture-using-rest-and-ssl" class="md-nav__link">
+    Comparison to a classical architecture using REST and SSL
+  </a>
+  
+    <nav class="md-nav" aria-label="Comparison to a classical architecture using REST and SSL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tcb-size" class="md-nav__link">
+    TCB size
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tls-complexity" class="md-nav__link">
+    TLS complexity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sessions-and-forward-secrecy" class="md-nav__link">
+    Sessions and forward secrecy
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#benefits-of-noise" class="md-nav__link">
+    Benefits of Noise
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#messages-vs-streams" class="md-nav__link">
+    Messages vs streams
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="security.html" title="Security discussion" class="md-nav__link">
+      Security discussion
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Tutorial
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Tutorial" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Tutorial
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="tutorial.html" title="Compiling and running" class="md-nav__link">
+      Compiling and running
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="writing-hello-world.html" title="Writing hello world" class="md-nav__link">
+      Writing hello world
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="api/index.html" title="API" class="md-nav__link">
+      API
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Operations
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Operations" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Operations
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1">
+    
+    <label class="md-nav__link" for="nav-4-1">
+      Server deployment
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Server deployment" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Server deployment
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="machine-setup.html" title="Machine setup" class="md-nav__link">
+      Machine setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="ias.html" title="IAS" class="md-nav__link">
+      IAS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="signing.html" title="Enclave signing" class="md-nav__link">
+      Enclave signing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="renewability.html" title="Renewability" class="md-nav__link">
+      Renewability
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="faq.html" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#future-features" class="md-nav__link">
+    Future features
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-mail-for-storage" class="md-nav__link">
+    Using mail for storage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attacks-on-messaging" class="md-nav__link">
+    Attacks on messaging
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-does-mail-work" class="md-nav__link">
+    How does Mail work
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison-to-a-classical-architecture-using-rest-and-ssl" class="md-nav__link">
+    Comparison to a classical architecture using REST and SSL
+  </a>
+  
+    <nav class="md-nav" aria-label="Comparison to a classical architecture using REST and SSL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tcb-size" class="md-nav__link">
+    TCB size
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tls-complexity" class="md-nav__link">
+    TLS complexity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sessions-and-forward-secrecy" class="md-nav__link">
+    Sessions and forward secrecy
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#benefits-of-noise" class="md-nav__link">
+    Benefits of Noise
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#messages-vs-streams" class="md-nav__link">
+    Messages vs streams
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="mail">Mail<a class="headerlink" href="#mail" title="Permanent link">&para;</a></h1>
+<p>A mail is an authenticated message with an encrypted body and a cleartext envelope. The mail can be up to two
+gigabytes in size, however, it must at this time fit into memory when loaded all at once. In practice mails will
+usually be much smaller than that. Mail provides a variety of features that are useful when building applications:</p>
+<p><strong>Encryption.</strong> The encryption key used by the enclave is private to that enclave but stable across restarts and
+enclave upgrades. This means messages encrypted and delivered by older clients can still be decrypted. The format
+uses the respected <a href="https://noiseprotocol.org/">Noise protocol framework</a> (with AES/GCM and SHA-256), which is
+the same cryptographic framework used by WhatsApp, the Linux kernel WireGuard protocol and I2P.</p>
+<p><strong>Authentication.</strong> Mail allows a message to prove it came from the owner of a particular key, as well as being
+encrypted to a destination public key. Because of this it's easy to encrypt a reply to the sender,
+although how a public key is mapped to a physical computer is up to the app developer. This capability is useful
+for another reason: if an enclave has a notion of a user identifiable by public key, mail can be cryptographically
+authenticated as having come from that user. This avoids the need for complex user login processes: the login
+process can be handled outside of the enclave, without compromising security. The envelope is protected this way
+along with the encrypted body.</p>
+<p><strong>Headers.</strong> Mail has unencrypted but authenticated (tamperproof) headers that can be used to link messages together.
+This allows clients to structure a conversation as if they were using a socket, but also hold multiple conversations
+simultaneously. This can be used to implement usage tracking, prioritisation, or other tasks not directly 
+relevant to data processing that the host can assist with (despite its untrusted nature). </p>
+<p>Headers provide strong sequence numbers that are set by the sender and prevent the host re-ordering messages, a 
+"topic" string field that is more useful than a port number (e.g. can identify what it's about, be mapped to
+message queue names), and applications can put their own data in the envelope part of the headers thus enabling 
+hosts to see part of the messages. This can frequently be a useful design pattern.</p>
+<p><strong>Framing.</strong> A typical need with any socket or stream based transport is to add framing on top, because the application
+really needs to work with messages. In textual protocols framing can be remarkably tricky to get right, as user 
+or attacker controlled data may be placed inside a message, meaning any characters that mark the end of a message need
+to be escaped. This can go wrong in <a href="https://www.blackhat.com/docs/us-17/thursday/us-17-Tsai-A-New-Era-Of-SSRF-Exploiting-URL-Parser-In-Trending-Programming-Languages.pdf">a variety of interesting ways</a>. Mail by its nature delimits
+messages such that you can always tell where they begin and end, without needing to impose your own framing on top.</p>
+<h2 id="future-features">Future features<a class="headerlink" href="#future-features" title="Permanent link">&para;</a></h2>
+<p>We plan to add additional features to the mail API in upcoming releases:</p>
+<p><strong>Padding.</strong> The body of a mail will be automatically padded to reduce or eliminate size-based side channel attacks. 
+The size of a message won't give away information about the contents. 
+See <a href="security.html#side-channel-attacks">side channel attacks</a>.</p>
+<p><strong>Storage.</strong> Mail will be stored by the host process. Often an enclave is implementing a form of batch job. By allowing
+the host to handle storage of messages, mail allows it to delay starting the enclave until enough data has arrived. This
+in turn allows the host to best utilise the limited pool of encrypted RAM available for enclaves. </p>
+<p><strong>Atomicity.</strong> Mail should be delivered by the host to an enclave on each startup, until the mail is acknowledged.
+Acknowledgement and posting mail will become transactional, thus can be performed atomically with other acknowledgements
+and sending other replies.  In this way enclaves can ensure that restarting an enclave doesn't produce duplicate 
+messages, perform the same actions twice or cause service interruptions to users.</p>
+<div class="admonition notice">
+<p class="admonition-title">Notice</p>
+<p>More sophisticated database solutions may be added in future releases.</p>
+</div>
+<h2 id="using-mail-for-storage">Using mail for storage<a class="headerlink" href="#using-mail-for-storage" title="Permanent link">&para;</a></h2>
+<p>Mail is not only intended for messaging. It subsumes the "sealing" functionality that appears in most trusted computing
+platforms.</p>
+<p>By sending mail to itself an enclave can store chunks of data that will be fed back to it at startup. It can then
+delete these chunks by acknowledging the mails. Utilising mail this way has a variety of advantages:</p>
+<ul>
+<li>The same encryption, authentication and TCB management features are available for stored data as well as messaging.</li>
+<li>The API is simple and used the same way for both use cases.</li>
+<li>Mail acknowledgement can be used to control data lifetime, by having enclaves signal to the host that it's safe to
+  delete data which is no longer needed.</li>
+<li>Stored data typically comes from input data (i.e. messages) and may be stored incrementally. Sequence numbers and
+  topics provide a way to organise stored data that can be integrated with the client's view of time, thus allowing
+  rollback attacks on storage to be detected and blocked in some cases.</li>
+</ul>
+<p>This isn't a replacement for a full database. However, in many cases it may be more appropriate, as accessing a
+database from an enclave can leak a lot of data via access patterns and of course the database itself may need
+access to the unencrypted data to index or search it. The mail-to-self pattern avoids this by storing the dataset
+in memory and always reading all stored data at startup.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In beta 3 storage management is delegated to the application. The enclave may signal acknowledgement requests
+to the host but by default nothing is done with them.</p>
+</div>
+<h2 id="attacks-on-messaging">Attacks on messaging<a class="headerlink" href="#attacks-on-messaging" title="Permanent link">&para;</a></h2>
+<p>Mail is designed to block a variety of attacks the host can mount on the enclave.</p>
+<p><strong>Observation.</strong> The body of the mail is encrypted with industry standard AES/GCM. The host can't see what the client
+is sending to the client.</p>
+<p><strong>Tampering.</strong> All the encrypted body, the plaintext headers and the user-specifiable envelope header are
+authenticated such that the enclave can detect if they were tampered with. See below for more information on this.  </p>
+<p><strong>Reordering.</strong> The enclave can't directly access any hardware other than the CPU and RAM. That means it can't know
+that messages came from the network card or hard disk in the right order, or that no messages were dropped. 
+Mails include a sequence number in the headers, meaning it is <em>visible</em> to the host but can't be tampered with. This
+enlists the client as an ally in the enclave's war against the host: the client wants its messages to be delivered in
+the right order and without being dropped. The Conclave runtime checks the sequence numbers in the headers always
+increment before passing the mail to your code.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The host may arbitrarily delay or even refuse to deliver mail, but it can only end the stream of mails early, it can't
+re-order messages relative to each other. This is a feature not a bug, as if the enclave could force the host to
+deliver mail that would imply it had actually taken over the computer somehow and was forcing it to provide services
+to the enclave. SGX isn't a form of remote control and nobody can force a host to run enclaves against its will.</p>
+</div>
+<p><strong>Side channel inspection.</strong> Future versions of mail will provide automatic and manual ways to pad messages, so their
+size can't give away any clues as to their contents. This is in fact one of the benefits of mail: if Conclave couldn't
+understand the message structure of your app (e.g. because it provided only a stream interface) then it wouldn't be
+able to do this type of padding.</p>
+<h2 id="how-does-mail-work">How does Mail work<a class="headerlink" href="#how-does-mail-work" title="Permanent link">&para;</a></h2>
+<p>When viewed as a structured array of bytes, a mail consists of five parts:</p>
+<ol>
+<li>The protocol ID.</li>
+<li>The unencrypted headers, which have fields simply laid out in order.</li>
+<li>The unencrypted envelope, which is empty by default and exists for you to add whatever data you like (i.e. additional
+   headers).</li>
+<li>The handshake.</li>
+<li>The encrypted body.</li>
+</ol>
+<p>Let's call the protocol ID, unencrypted headers and envelope the <em>prologue</em>. </p>
+<p>At the core of Mail's security is the handshake. It consists of the data needed to do an elliptic curve Diffie-Hellman
+calculation and derive a unique (per mail) AES/GCM key, using the 
+<a href="https://noiseprotocol.org/noise.org">Noise protocol specification</a>. </p>
+<p>AES/GCM is an <em>authenticated</em> encryption mechanism. That means the key is used not only to encrypt data, but also 
+calculate a special hash called a "tag" that allows detection of modifications to the encrypted data. This matters 
+because 'raw' encryption merely stops someone reading a message: if they already know what some parts of the message
+say (e.g. because it's a well known data structure) then by flipping bits in the encrypted data, corruption can be
+created in the decrypted message. In some situations these corruptions could change the way the message is parsed leading
+to an exploit, for example, <a href="https://paragonie.com/blog/2015/05/using-encryption-and-authentication-correctly">by changing a zero to a one and gaining administrator access</a>.</p>
+<p>Like all symmetric ciphers, for AES/GCM to work both sides must know the same key. But we want to be able to send
+messages to a target for which we only know a public key, and have never had a chance to securely generate a joint AES
+key with. This is the problem solved by the <a href="https://en.wikipedia.org/wiki/Elliptic-curve_Diffie%E2%80%93Hellman">Elliptic Curve Diffie-Hellman algorithm</a>.
+To use it we first select a large random number (256 bits) and then convert that to a coordinate on an elliptic
+curve - in our case, we use Curve25519, which is a modern and highly robust elliptic curve. The point is our public
+key and can be encoded in another 256 bits (32 bytes). We write this public key after the unencrypted envelope. This
+key is an <em>ephemeral</em> key - we picked it just for the purposes of creating this mail. </p>
+<p>We know the target's public key either because the enclave puts it public key into the remote attestation, represented 
+by an <code>EnclaveInstanceInfo</code> object, or because the enclave is replying and obtained the key to reply to from an earlier
+mail. Two public keys is all that's needed for both parties to compute the same AES key, without any man-in-the-middle
+being able to calculate the same value.</p>
+<p>The sender may also have a long term "static" public key that the target will recognise. However, at this point we may
+choose to finish the handshake, either because we are sending a mail anonymously or because the target will recognise 
+us in some other manner than our static key. Alternatively, we may now append an encryption of our long term static
+public key and repeat the calculation between the enclave's public key and our static key, generating a new AES/GCM
+key as a result.</p>
+<p>As each step in the handshake progresses, a running hash is maintained that mixes in the hash of the prologue and the
+various intermediate stages. This allows the unencrypted headers to be tamper-proofed against the host as well, because
+the host will not be able to recalculate the authentication tag emitted to the end of the handshake.</p>
+<p>Thus, in the case where the sender has a long term keypair, the handshake consists of a random public key, an 
+authenticated encryption of the sender's public key, and an authentication hash. Once this is done the mail's AES
+key has been computed. The initialization vector for each AES encryption is a counter (an exception will be thrown
+if the mail is so large the counter would wrap around, as that would potentially reveal information for cryptanalysis,
+however this cannot happen given the maximum mail size).</p>
+<p>The encrypted body consists of a set of 64kb packets. Each packet has its own authentication tag, thus data is read
+from a mail in 64kb chunks. Packets may also contain a true length as distinct from the length of the plaintext. This
+allows the sender to artificially inflate the size of the encrypted message by simply padding it with zeros, which
+enables hiding of the true message size. Message sizes can be a giveaway to what exact content it contains. </p>
+<h2 id="comparison-to-a-classical-architecture-using-rest-and-ssl">Comparison to a classical architecture using REST and SSL<a class="headerlink" href="#comparison-to-a-classical-architecture-using-rest-and-ssl" title="Permanent link">&para;</a></h2>
+<p>Let's look at why Conclave provides Mail, instead of having clients connect into an enclave using HTTPS.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The following explanation applies when connecting to the <em>enclave</em>. When connecting to the <em>host</em> you may use
+whatever transport mechanism you like to pass mail around. Conclave doesn't currently privilege any particular
+transport over any other.</p>
+</div>
+<p>We provide the mail paradigm for these reasons:</p>
+<ol>
+<li>HTTPS requires a relatively large and complex infrastructure, increasing the size of the trusted computing base (TCB).
+   It can go wrong in ways that aren't intuitive. Mail attempts to solve some common security problems before they start.</li>
+<li>SSL/TLS is not well adapted to enclaves, for example certificates don't make sense, but the protocol requires them.</li>
+<li>Web servers require the backing of a database to ensure session persistence and atomicity, but this interacts 
+   badly with the way enclaves handle time and state. Mail allows for a very simple approach to restarting and upgrading
+   enclaves.</li>
+<li>The primary reason to use HTTPS+REST is familiarity and installed base of tools. However, none of these tools or
+   libraries understand SGX remote attestation so cannot be used in their regular modes and must be modified or 
+   adjusted in complex ways, thus invalidating most of the benefits.</li>
+</ol>
+<p>We'll now explore these issues in more depth.</p>
+<h3 id="tcb-size">TCB size<a class="headerlink" href="#tcb-size" title="Permanent link">&para;</a></h3>
+<p>The code that handles encrypted messaging is directly exposed to attackers. It is important to minimise
+the amount of code exposed in this way. For more discussion of how enclaves are designed to minimise code size, 
+please see <a href="enclaves.html#small-is-beautiful">"Small is beautiful"</a>.  </p>
+<h3 id="tls-complexity">TLS complexity<a class="headerlink" href="#tls-complexity" title="Permanent link">&para;</a></h3>
+<p>Mail is based on the <a href="https://noiseprotocol.org/">Noise protocol framework</a>. Noise is designed by professional
+cryptographers and is used in WhatsApp, WireGuard and other modern network protocols. Noise was created because TLS
+is weighed down with complicated historical baggage and web-specific features. A Noise protocol delivers most of
+the same functionality but in a more modular, cleaner and simpler way. Therefore, outside of the web the primary
+reason to use TLS is compatibility, not technical excellence. Now there is Noise there isn't much reason to use TLS
+anymore when designing a new protocol from scratch, unless you really need its features or support.</p>
+<p>TLS 1.3 recognises this problem and simplifies the protocol, but it's still far more complex than a Noise protocol, 
+and because the purpose of using TLS is compatibility and TLS 1.3 is very new, realistically you will support TLS 1.2 
+as well. So now you have even more complexity in your enclave because you need both 1.2 and 1.3 support 
+simultaneously.</p>
+<p>A big source of complexity in TLS is X.509 certificates. Certificates do not make sense for an enclave but TLS 
+absolutely requires them, so some systems try to jam fake pseudo-certificates into TLS, which aren't real but
+contain the remote attestation in an extension field. Fake certificates can create problems because a lot of 
+organisations have decades of procedures and best practices around all aspects of certificates and X.509, 
+so fake pseudo-certificates can end up harder to deploy and work with than a purely technical analysis would suggest.
+Noise is more modular - you can provide any arbitrary byte array as part of the handshake, which can thus 
+include a certificate (of any format) if you want that, but it isn't necessary.</p>
+<p>In Conclave the "certificate" is the remote attestation data represented as an <code>EnclaveInstanceInfo</code> object. 
+It will usually make sense to expose this to the client via some app-specific mechanism, for example, returning it
+in some other API, publishing it on a web server, a network drive, a message queue, even putting it into a 
+distributed hash table. Noise and by extension Conclave doesn't care how you get this data, only that you have it.</p>
+<p>Certificates don't make sense for enclaves because TLS is all about <em>verifiable names</em> as a form of identity, but
+enclaves are all about <em>measurements</em> and <em>remote attestations</em>. Thus, any client tool that communicates with an
+enclave will need to extract a remote attestation from a pseudo-certificate and throw out the rest. Given that you
+would need complex custom client-side code anyway, TLS buys you little beyond brand recognition.  </p>
+<div class="admonition notice">
+<p class="admonition-title">Notice</p>
+<p>This logic applies when connecting to an <em>enclave</em>. When connecting to a <em>host</em> the domain name identity of the 
+server owner may well matter, and in that case TLS can be useful.</p>
+</div>
+<p>TLS stacks have a history of being extremely buggy. The security TLS supposedly adds has a track record of being 
+undermined by bugs in the implementations e.g. Heartbleed. Putting a TLS stack into an enclave makes it much bigger 
+and harder to audit. In Conclave, we could use the JSSE Java SSL implementation and thus avoid memory management errors,
+but there are other kinds of issues that can be experienced with TLS too, that Java cannot protect us from. We use a
+pure Java implementation of Noise which ensures there are no buffer overflows in our crypto stack, and it's small enough
+that we have read every line. By licensing Conclave you can get the code, and then you can read every line too. This
+is impractical for a TLS stack.</p>
+<p>Finally, TLS mandates complex session persistence. This is a subtle point that deserves deeper discussion.</p>
+<h3 id="sessions-and-forward-secrecy">Sessions and forward secrecy<a class="headerlink" href="#sessions-and-forward-secrecy" title="Permanent link">&para;</a></h3>
+<p>One of the upgrades Noise gives us is the ability to encrypt in both interactive and one-way modes e.g. for encrypting 
+a file. TLS and HTTPS are fundamentally interactive protocols and cannot do this. </p>
+<p>TLS is interactive because the modern way to use it (and the only way in TLS 1.3) is with <em>forward secrecy</em>. 
+In a scheme with forward secrecy two sides calculate an ephemeral session symmetric key during the handshake, 
+that is used only for a short period and then deleted - usually this means the ephemeral key is stored 
+only in RAM. </p>
+<p>In theory this is good, because it means if someone hacks the server/enclave they can't decrypt all the old 
+messages they might have recorded. The private key is used only to establish identity, not actually encrypt 
+any messages. With a purely one-way handshake you don't get this.</p>
+<p>Forward secrecy is a rather slippery feature. The problem is simple - what does "short period" mean? 
+This is surprisingly hard to answer.</p>
+<p>TLS was designed for the web so at first this meant a TCP connection that carried a few web requests. 
+So, usually a few seconds or perhaps hours if doing a big download. These days it gets used in many other kinds of 
+apps and thus might mean much longer sessions, but fundamentally a TLS session was tied to the lifetime of a 
+socket and therefore it couldn't last very long. </p>
+<p>Handshaking to set up a new session key is slow, so various optimisations were introduced. Connections were 
+kept alive longer, and TLS added "session resume" that allowed session keys to be saved to disk and continued 
+in later connections. For this to actually add any security it has to be harder to steal the cached session 
+keys than the identity keys, but why would this be so 
+<a href="https://www.imperialviolet.org/2013/06/27/botchingpfs.html">when they're both stored in ordinary files</a>?</p>
+<p>But there's actually an even deeper conceptual problem. TLS encrypts sockets. It has nothing to say about the wider
+design of your app - that's out of scope for the people designing TLS. As a consequence TLS sessions don't bear any
+resemblance to actual user sessions. The intuition behind forward secrecy is a sort of controlled forgetting ...
+when the session ends the keys that could decrypt it are destroyed, so even if a passive observer stops being
+passive and hacks someone's private key they can't get the "forgotten" data.</p>
+<p>If web apps forgot everything you uploaded for no better reason than you changed from 4G to Wi-Fi people 
+would get pretty upset. So HTTP has the idea of cookies, but even that is too transient for most users, 
+which is why web apps normally require you to log in to an account. The actual data an attacker cares about 
+is tied to the lifetime of an account, not a TCP connection.</p>
+<p>To make this work servers must store user session data into a database. This is so obvious and natural 
+we hardly think about it, but it largely obliterates the supposed benefits of forward secrecy - the 
+private key is held on the server, so if you can steal it you can probably steal the database credentials 
+that are also stored on the server. And then you can just steal the valuable user data out of the database, 
+you don't need to decrypt TLS sessions anymore.</p>
+<p>The biggest risk to an enclave is that the host can read its memory and thus steal its keys. Forward secrecy 
+doesn't help you with this because users (we think) won't tolerate an app that forgets stuff if a TCP connection 
+resets, and operations teams won't tolerate software that can't be safely restarted. </p>
+<p>So in practice an enclave will immediately re-encrypt data received from a client under a static sealing key, 
+and if you can steal a TLS private key out of an enclave you can also steal a sealing key. So it buys you nothing. 
+Moreover, it's insufficient to simply seal a byte array. You will probably need some sort of minimal database 
+infrastructure, to keep data separated by user and so on. So now you have the complexity of a data management 
+layer in the enclave as well.</p>
+<p>The result of all this is we don't lose much by using a more asynchronous design in which there isn't an
+interactive handshake.</p>
+<h2 id="benefits-of-noise">Benefits of Noise<a class="headerlink" href="#benefits-of-noise" title="Permanent link">&para;</a></h2>
+<p>By losing TLS we can:</p>
+<ul>
+<li>Eliminate huge complexity from in-enclave code.</li>
+<li>Avoid pseudo-certificates and other hacks that will open up exploits and hit corporate X.509 bureaucracy.</li>
+<li>Enable enclaves to talk to each other even if they can't be loaded simultaneously (e.g. on same machine)</li>
+<li>Move session management <em>and expiry</em> out of the enclave, where it can't be done properly anyway because there's no secure access to the clock.</li>
+<li>Get various other benefits, like being able to reuse MQ brokers, integrate with Corda flows, store messages to databases, support M-to-1 inbound message collection before processing and so on.</li>
+</ul>
+<h2 id="messages-vs-streams">Messages vs streams<a class="headerlink" href="#messages-vs-streams" title="Permanent link">&para;</a></h2>
+<p>There are three main ways for networked programs to communicate: streams, messages and RPCs. The popular REST paradigm
+is a form of RPC for the purposes of this discussion.</p>
+<p>Multi-party computations all involve the transmission of relatively small messages, often without needing any
+immediate reply. For instance, over the course of a day parties may submit a small data structure when a human gets
+around to it, and get the results back hours later when a deadline or threshold is reached. In other cases
+submission of data to an enclave may be asynchronous and should not block a business process in case of outage.</p>
+<p>These requirements are not a good fit for stream-oriented connections that when on top of TCP require app
+developers to do their own framing (a frequent source of security vulnerabilities), can break due to NAT boxes 
+timing them out, IP address changes, passing through one-way firewalls, require high-availability servers with 
+load balancing, require databases for stored state and so on.</p>
+<p>With a stream or RPC oriented approach the enclave would be expected to respond to bytes from a client more or less
+immediately, meaning it has to be always running and would have to persist uploaded data itself. Unfortunately
+persistence in enclaves is tricky due to the existence of Memento attacks (see "<a href="enclaves.html#handling-time-and-state">Handling time and state</a>").</p>
+<p>RPCs (including REST) can be hard to integrate with fully reliable systems that can tolerate restarts at any moment.
+Because server restarts break connections, in a loosely coupled multi-party system connection-oriented protocols
+require expensive HA load balancing to ensure users aren't often exposed to errors caused by planned restarts. Even
+then it isn't possible to eliminate such errors entirely, just reduce their impact. Load balancing in an enclave
+environment requires special support because the client is intimately aware of the exact <em>CPU</em> the enclave is
+running on - thus switching a client between servers isn't transparent. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Future versions of Conclave are planned to add support for enclave clustering. </p>
+</div>
+<p>All this suggests the primary paradigm exposed to enclaves should be messages. The host will take care of
+delivering messages and providing atomic, transactional semantics over them so many kinds of enclaves won't need an
+encrypted database at all. The untrusted host can also take on the significant burden of moving data around,
+storing it to disk, sorting it, applying backpressure, exposing to the admin if there are backlogs etc.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="architecture.html" title="Architecture" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Architecture
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="security.html" title="Security discussion" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Security discussion
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="assets/javascripts/bundle.5f27aba8.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: ".",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "assets/javascripts/worker/search.27c6a5e6.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

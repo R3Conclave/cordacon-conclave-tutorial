@@ -1,0 +1,65 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.r3.conclave",
+    "module": "macos-sign-tool",
+    "version": "0.4-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.6.1",
+      "buildId": "dwed36xq7jef7lqgidung2kjcu"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.localToProject": "public",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "macos-sign-tool-0.4-SNAPSHOT.jar",
+          "url": "macos-sign-tool-0.4-SNAPSHOT.jar",
+          "size": 1118229,
+          "sha512": "d1bd45bbe29ab8a6db796f5dd1d20da95a542f09b7fa0c0d64ef30027718e66d7fcb9f4364443ebeb5948036800dd0cb46956bc87f3bca58717671a199129d93",
+          "sha256": "bd66284aca7e873ed70757c207a08e543e524a7cb04f61dee92e54e236b1f210",
+          "sha1": "4cee42af65c2c29f07d16a59c22eb7ac6bdedbe5",
+          "md5": "722b81618adef1d8335bd7b1b208000e"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.localToProject": "public",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "macos-sign-tool-0.4-SNAPSHOT.jar",
+          "url": "macos-sign-tool-0.4-SNAPSHOT.jar",
+          "size": 1118229,
+          "sha512": "d1bd45bbe29ab8a6db796f5dd1d20da95a542f09b7fa0c0d64ef30027718e66d7fcb9f4364443ebeb5948036800dd0cb46956bc87f3bca58717671a199129d93",
+          "sha256": "bd66284aca7e873ed70757c207a08e543e524a7cb04f61dee92e54e236b1f210",
+          "sha1": "4cee42af65c2c29f07d16a59c22eb7ac6bdedbe5",
+          "md5": "722b81618adef1d8335bd7b1b208000e"
+        }
+      ]
+    }
+  ]
+}

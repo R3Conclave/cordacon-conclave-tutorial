@@ -1,0 +1,61 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.r3.conclave",
+    "module": "native-substratevm-simulation",
+    "version": "0.4-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.6.1",
+      "buildId": "dwed36xq7jef7lqgidung2kjcu"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "native-substratevm-simulation-0.4-SNAPSHOT.jar",
+          "url": "native-substratevm-simulation-0.4-SNAPSHOT.jar",
+          "size": 783420,
+          "sha512": "bd2deec9daf601cc130da0a67f21f92b1d225b7ab2ad3df341093a84805ee40c571a7eda9c9a79d004c5c2cad154e51aac1a6deea6897e6738df76ea71727f60",
+          "sha256": "36141129e2271f06a315d8216df5a0e85e62ea400515631801f218840eb37cf7",
+          "sha1": "98a8fe7923b1ac16bccdcb7807cb0fba7be9cf56",
+          "md5": "60c5d36387e0af4b09eba850c94bdf13"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "native-substratevm-simulation-0.4-SNAPSHOT.jar",
+          "url": "native-substratevm-simulation-0.4-SNAPSHOT.jar",
+          "size": 783420,
+          "sha512": "bd2deec9daf601cc130da0a67f21f92b1d225b7ab2ad3df341093a84805ee40c571a7eda9c9a79d004c5c2cad154e51aac1a6deea6897e6738df76ea71727f60",
+          "sha256": "36141129e2271f06a315d8216df5a0e85e62ea400515631801f218840eb37cf7",
+          "sha1": "98a8fe7923b1ac16bccdcb7807cb0fba7be9cf56",
+          "md5": "60c5d36387e0af4b09eba850c94bdf13"
+        }
+      ]
+    }
+  ]
+}

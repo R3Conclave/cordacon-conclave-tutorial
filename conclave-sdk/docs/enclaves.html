@@ -1,0 +1,1035 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.2.2">
+    
+    
+      
+        <title>Enclaves - Conclave documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.a2408e81.min.css">
+      
+        <link rel="stylesheet" href="assets/stylesheets/palette.a46bcfb3.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#ef5350">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+        
+<link rel="preconnect dns-prefetch" href="https://www.google-analytics.com">
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-87760032-7","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="red" data-md-color-accent="red">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#enclave-oriented-computing" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="." title="Conclave documentation" class="md-header-nav__button md-logo" aria-label="Conclave documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Conclave documentation
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Enclaves
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="index.html" class="md-tabs__link md-tabs__link--active">
+        Welcome
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="architecture.html" class="md-tabs__link">
+          Development
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="machine-setup.html" class="md-tabs__link">
+          Operations
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Conclave documentation" class="md-nav__button md-logo" aria-label="Conclave documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Conclave documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="index.html" title="Welcome" class="md-nav__link">
+      Welcome
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Enclaves
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="enclaves.html" title="Enclaves" class="md-nav__link md-nav__link--active">
+      Enclaves
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-an-enclave" class="md-nav__link">
+    What is an enclave?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#local-messaging-and-operating-system-access" class="md-nav__link">
+    Local messaging and operating system access
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encrypted-messages" class="md-nav__link">
+    Encrypted messages
+  </a>
+  
+    <nav class="md-nav" aria-label="Encrypted messages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remote-attestation" class="md-nav__link">
+    Remote attestation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#measurements-vs-signers" class="md-nav__link">
+    Measurements vs signers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#small-is-beautiful" class="md-nav__link">
+    Small is beautiful
+  </a>
+  
+    <nav class="md-nav" aria-label="Small is beautiful">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    Security
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auditability" class="md-nav__link">
+    Auditability
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enclaves-vs-alternative-approaches" class="md-nav__link">
+    Enclaves vs alternative approaches
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Development
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Development" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Development
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Conclave architecture
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Conclave architecture" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Conclave architecture
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="architecture.html" title="Architecture" class="md-nav__link">
+      Architecture
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="mail.html" title="Mail" class="md-nav__link">
+      Mail
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="security.html" title="Security discussion" class="md-nav__link">
+      Security discussion
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Tutorial
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Tutorial" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Tutorial
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="tutorial.html" title="Compiling and running" class="md-nav__link">
+      Compiling and running
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="writing-hello-world.html" title="Writing hello world" class="md-nav__link">
+      Writing hello world
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="api/index.html" title="API" class="md-nav__link">
+      API
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Operations
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Operations" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Operations
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1">
+    
+    <label class="md-nav__link" for="nav-4-1">
+      Server deployment
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Server deployment" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Server deployment
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="machine-setup.html" title="Machine setup" class="md-nav__link">
+      Machine setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="ias.html" title="IAS" class="md-nav__link">
+      IAS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="signing.html" title="Enclave signing" class="md-nav__link">
+      Enclave signing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="renewability.html" title="Renewability" class="md-nav__link">
+      Renewability
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="faq.html" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-an-enclave" class="md-nav__link">
+    What is an enclave?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#local-messaging-and-operating-system-access" class="md-nav__link">
+    Local messaging and operating system access
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encrypted-messages" class="md-nav__link">
+    Encrypted messages
+  </a>
+  
+    <nav class="md-nav" aria-label="Encrypted messages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remote-attestation" class="md-nav__link">
+    Remote attestation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#measurements-vs-signers" class="md-nav__link">
+    Measurements vs signers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#small-is-beautiful" class="md-nav__link">
+    Small is beautiful
+  </a>
+  
+    <nav class="md-nav" aria-label="Small is beautiful">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    Security
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auditability" class="md-nav__link">
+    Auditability
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enclaves-vs-alternative-approaches" class="md-nav__link">
+    Enclaves vs alternative approaches
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="enclave-oriented-computing">Enclave oriented computing<a class="headerlink" href="#enclave-oriented-computing" title="Permanent link">&para;</a></h1>
+<p>Conclave implements the latest iteration of a simple idea: we can make computing more secure and private by
+isolating a small piece of code from the rest of the computer on which it runs (an <em>enclave</em>). Remote users can
+be shown what code is running in the isolated world and then upload secrets to it, where they can be processed
+without the owner of the computer in question getting access to them. Enclaves can be used to protect private data
+from the cloud, do multi-party computations on shared datasets and make networks more secure.</p>
+<p>Intel SGX is an implementation of enclave-oriented computing. Conclave builds on SGX by making it easier to develop
+enclaves in high level languages like Java or Kotlin.</p>
+<p>In this document we'll introduce the key concepts.</p>
+<h2 id="what-is-an-enclave">What is an enclave?<a class="headerlink" href="#what-is-an-enclave" title="Permanent link">&para;</a></h2>
+<p>An <strong>enclave</strong> is a region of memory which the CPU blocks access to, running inside an ordinary process which we call
+the <strong>host</strong>. The region contains both code and data, neither of which can be read or tampered with by anything else.
+Code executing inside this region has access to special CPU instructions that give it a variety of useful
+abilities. Enclave memory is protected both from the rest of the code in that process, privileged software like the
+kernel or BIOS, and because the RAM itself is encrypted even physical attackers. This means a remote computer can
+trust that an enclave will operate correctly even if the owner of the computer is malicious.</p>
+<p>In Conclave, an enclave is a subclass of the <a href="api/com/r3/conclave/enclave/Enclave.html"><code>Enclave</code></a> class, combined
+with an embedded JVM and compiled into a native shared library (ending in .so), which is then itself bundled into
+the module JAR. The host program then uses the <a href="api/com/r3/conclave/host/EnclaveHost.html"><code>EnclaveHost</code></a> class to
+load the enclave class.</p>
+<h2 id="local-messaging-and-operating-system-access">Local messaging and operating system access<a class="headerlink" href="#local-messaging-and-operating-system-access" title="Permanent link">&para;</a></h2>
+<p>Once an enclave is loaded, the host and enclave can exchange byte buffers back and forth. The format of these byte
+arrays isn't defined by Conclave and is up to the application developer. The actual call operation is efficient:
+the buffers are copied from the host into the enclave using a direct memory copy. There are no sockets or other
+operating system constructs involved.</p>
+<p>Enclaves can't directly access the operating system. However, they can request the host process to do the access on
+the enclave's behalf. In practice due to the untrusted nature of the host operating system, it is much safer to
+make explicit requests to the host than try to run existing code inside the enclave. <a href="https://hovav.net/ucsd/dist/iago.pdf">Most existing software is
+built on the assumption that the operating system is not a threat</a>, 
+because the OS normally has complete control so it doesn't make sense to defend yourself from it.</p>
+<h2 id="encrypted-messages">Encrypted messages<a class="headerlink" href="#encrypted-messages" title="Permanent link">&para;</a></h2>
+<p>Enclaves are only useful if some other computer is interacting with them over the network. An enclave <em>by itself</em>
+doesn't gain you anything, because enclaves are defending against the owner of a computer. If you just run an enclave
+locally then the owner of the computer is you, and it doesn't make sense for software to try and protect your
+own data from yourself.</p>
+<p>Enclaves can generate random numbers and thus encryption keys available only to themselves, which nothing else on
+the host machine can access. Using these keys remote computers can encrypt messages to the enclave. These messages can
+be passed into the enclave via the host where they are decrypted and worked on. The owner of the host computer can't 
+read them, despite that the data is being processed on their hardware.</p>
+<p>Conclave calls these encrypted messages <a href="architecture.html#mail"><strong>mails</strong></a>, by way of analogy to encrypted e-mail, but 
+enclaves can work with encryption in whatever way they want. The Mail API is just a utility and you don't have to use it.</p>
+<h3 id="remote-attestation">Remote attestation<a class="headerlink" href="#remote-attestation" title="Permanent link">&para;</a></h3>
+<p>Encrypting a message requires a public key, which raises the question of where that key comes from. The clients of
+the enclave have to be convinced that the key really belongs to an enclave they want to work with and not, say, an
+unencrypted non-enclave program that's impersonating the intended destination.</p>
+<p>Enclave host programs can generate a small data structure called a <strong>remote attestation</strong> (RA). This structure
+states the following facts:</p>
+<ol>
+<li>A genuine, un-revoked Intel CPU is running ...</li>
+<li>... an enclave into which a code module with a specific hash (measurement) was loaded ...</li>
+<li>... and which has generated public key P ...</li>
+<li>... and the computer is up to date with security patches, and configured in the recommended way.</li>
+</ol>
+<p>The host generates a remote attestation and sends it to clients in some way. Those clients can then send encrypted
+messages to the enclave using the public key P after checking what kind of enclave it really is. By recognising a
+list of known code hashes clients can effectively whitelist particular enclaves and treat them as trustworthy
+servers.</p>
+<p>In Conclave, a remote attestation is an instance of the <a href="api/com/r3/conclave/client/EnclaveInstanceInfo.html"><code>EnclaveInstanceInfo</code></a> class.</p>
+<h2 id="measurements-vs-signers">Measurements vs signers<a class="headerlink" href="#measurements-vs-signers" title="Permanent link">&para;</a></h2>
+<p>The code hash included in a remote attestation is called a <strong>measurement</strong>. It's not the hash of any particular file
+but rather a more complex hash that must be calculated with special tools. It covers the entire module and all of its
+dependencies loaded into an enclave (a fat JAR).</p>
+<p>A measurement hash is pretty unhelpful by itself. It's just a large number. To be meaningful you must <em>reproduce</em> the
+measurement from the source code of the enclave. With Conclave this is easy as we've fixed everything that might cause
+two different builds of the same source code to yield a different file. When you compile your enclave the measurement
+hash is calculated and printed. By comparing it to what you find inside a remote attestation, you can know the source
+code of the remote enclave matches what you have locally.</p>
+<p>Whitelisting measurements is strong but brittle. Any upgrade to the enclave will cause your app to reject the new
+remote attestation and stop working until you re-read the enclave's source code, reproduce the build again and whitelist
+the new measurement. An alternative is to whitelist a <em>signing key</em> instead.</p>
+<p>Enclave files can be signed, and the SGX infrastructure understands and verifies these signatures. This is useful
+for two reasons:</p>
+<ol>
+<li>You can choose to accept any enclave produced by a particular organisation, rather than reviewing the source code
+   and reproducing the enclave yourself.</li>
+<li>Each SGX capable computer has a root key that must whitelist enclaves to be executed. This is so cloud providers can
+   retain visibility and control into what programs are actually running on their hardware.</li>
+</ol>
+<p>The public part of the key that signed an enclave is included in remote attestations, so you can choose to
+communicate with any enclave signed by a given key.</p>
+<h2 id="small-is-beautiful">Small is beautiful<a class="headerlink" href="#small-is-beautiful" title="Permanent link">&para;</a></h2>
+<p>Enclaves are a very general capability and can be used in a variety of ways. You can:</p>
+<ul>
+<li>Process private data without being able to see it yourself, to enhance your user's privacy.</li>
+<li>Create a hardware-backed form of zero knowledge proofs: make trustworthy 'statements' that a particular
+  computation was done on some data, without the data itself needing to be revealed.</li>
+<li>Outsource some kinds of computations to an untrusted cloud.</li>
+<li>Improve the security of a server by restricting access to a whitelist of client enclaves, blocking attempts to send
+  malformed packets and messages that might come from hackers.</li>
+<li>Make your service auditable only by users who want high assurance - those who don't care can simply ignore the
+  infrastructure entirely.</li>
+</ul>
+<p>It's important to understand the limitations of enclaves. They aren't meant to be a general protection for
+arbitrary programs. Although technically possible to just relay operating system calls in and out of an enclave, this
+approach <a href="https://hovav.net/ucsd/dist/iago.pdf">suffers from various security pitfalls</a> and more importantly is a
+mis-understanding of the benefits enclaves give you.</p>
+<p>Enclave-oriented computing is based on two key insights:</p>
+<ol>
+<li>The more code that processes attacker-supplied data the more likely the program is to be hackable.</li>
+<li>A large chunk of most programs is actually just moving data around and managing it in various ways, not processing it.</li>
+</ol>
+<p>The software and hardware that must be uncompromised for a system to work correctly is called the 
+<em>trusted computing base</em>, or TCB. In Conclave the TCB includes the CPU itself, the patchable microcode of the CPU,
+and all software running inside the enclave - both your code and the Conclave runtime.</p>
+<p>A major goal in secure systems design is to minimise the size of the TCB. This is for two reasons.</p>
+<h3 id="security">Security<a class="headerlink" href="#security" title="Permanent link">&para;</a></h3>
+<p>The software industry has decades of experience with building secure and tamperproof systems. A
+simple heuristic is that the more code there is inside the TCB that handles attacker-controlled data, the easier 
+it will be for an adversary to find a mistake and break in.</p>
+<p>It's always been good design to minimise the amount of code that handles potentially malicious data and enclaves give
+you an even greater incentive to do so. That's because enclaves don't magically make the software inside them
+un-hackable. They protect the code and its memory from outside interference by the owner of the computer (and any
+hackers that gained access to the operating system) but if the code running inside the enclave has a bug that can
+be used to get in those protections are of no use. Thus it's important for an enclave to be written securely.</p>
+<p>Conclave helps with this dramatically because it lets you write enclave logic in memory-safe, type-safe languages like
+Java or Kotlin. These languages eliminate by construction huge swathes of bugs. All buffer bounds are checked,
+no memory is freed before use and all casts are valid. This makes it much easier to process data
+from outside the enclave because you don't have to worry that you might accidentally let an attacker in.</p>
+<p>Sometimes people find this confusing: a JVM is quite large, so if the TCB needs to be small isn't that a problem? 
+It's not for two reasons. One reason is because this heuristic only applies for code that an attacker can actually 
+reach and influence via external input, but the input data to the JVM (bytecode) is itself a fixed part of the enclave.
+Attackers can't modify it without changing the measurement reported in the remote attestation and thus being detected by
+the client - the client's enclave constraint will be violated and an exception  will be thrown. The second reason is
+that Conclave uses the GraalVM Native Image JVM, in which all bytecode is compiled to native code ahead of time. The
+actual JVM in use is therefore quite tiny; it consists mostly of the garbage collector.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Whilst garbage collected/type safe programs are much safer than programs written in C, they aren't immune to
+vulnerabilities. Watch out for very generic reflective code like object serialization frameworks, that could be
+tricked into deserializing malicious streams.</p>
+</div>
+<h3 id="auditability">Auditability<a class="headerlink" href="#auditability" title="Permanent link">&para;</a></h3>
+<p>Enclaves are meaningless unless the user verifies the enclave does what they think it does before sending it private
+data. As the enclave size goes up it gets harder to read and understand its code.</p>
+<p>In practice audit work will often be outsourced: we don't expect that every end user of an enclave reads all the code
+themselves. Ultimately though, someone the user trusts must read all the code inside the enclave. The less there is to
+read the better.</p>
+<p>A lot of code works with data without parsing or understanding it. For instance, network frameworks read packets from
+the wire and databases store data to disk in generic ways. Other parts of a program truly understand the data and work
+with it in app-specific ways; usually this is called business logic.</p>
+<p>In enclave-oriented design you draw a bright line between host code and business logic. Business logic runs inside
+an enclave on normal Java objects. Host code does everything else:</p>
+<ul>
+<li>Network handling</li>
+<li>Storage</li>
+<li>Routing</li>
+<li>Monitoring</li>
+<li>Providing administration interfaces</li>
+</ul>
+<p>and so on. Keeping as much code in the host as possible has two key advantages:</p>
+<ol>
+<li>The host code is untrusted and assumed to be compromised. Thus any bugs in it are much less serious. You can worry
+   less about security vulnerabilities in the host code because it can't access your user's private data.</li>
+<li>Because the enclave is small it will change less frequently, meaning clients don't need to re-audit or whitelist
+   new versions.</li>
+</ol>
+<p>The second point is intuitive to understand. Think of your enclave as a concrete version of your privacy policy. If you
+change your web server, core database engine or even entire operating system then this is of no concern to your users.
+You've only changed <em>how</em> data is processed. But if you change <em>what</em> you do with their data, they may have an opinion
+on this and want to know about it. Remote attestation lets them see that the core business logic has changed, and in
+what way.</p>
+<h2 id="enclaves-vs-alternative-approaches">Enclaves vs alternative approaches<a class="headerlink" href="#enclaves-vs-alternative-approaches" title="Permanent link">&para;</a></h2>
+<p>The enclave architecture is the result of many years of evolution. Enclaves are good at minimising TCB size because that
+was their entire design goal: an enclave is intended to be the smallest piece of application logic that needs to be 
+protected.  </p>
+<p>Some other systems work by attempting to protect and attest an entire operating system stack, but <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.570.7943&amp;rep=rep1&amp;type=pdf">this was tried in the 
+past</a> and found to work poorly. Let
+us now briefly trace the historical evolution that led to the SGX enclave design today.</p>
+<p>The first attempts at implementing trusted computing relied on a so-called <em>trusted platform module</em> chip (TPM). The
+TPM contained special registers called <em>platform configuration registers</em> (PCR). A PCR was sized to contain a hash, but
+could not be written directly. Instead writing to a PCR concatenated the new hash value with the prior, and stored the
+result of hashing that concatenation. PCRs therefore contained the final hash in a chain of hashes. The only way to get
+a PCR to a particular value is to feed it the right sequence of hashes, called the <em>chain of trust</em>.</p>
+<p>The firmware and electronics on the motherboard implemented a <em>static root of trust</em>. In this design, the initial boot 
+ROM would load the BIOS and other firmware, hash it into a PCR and then pass control to it. The firmware would then in 
+turn hash and load the next stage into the same PCR and so on. Thus by the time the system booted, all the software 
+and firmware on the system had been hashed together. The contents of the PCR could then be remotely attested and the 
+user could verify what software booted. This then let them reason about how the remote computer would behave.</p>
+<p>Given the explanations above the problem with this approach is hopefully now obvious - this approach defined the TCB
+as everything in the entire boot sequence, including the whole operating system kernel. Any bug at any point in this
+code would allow someone to create a forged chain of trust and undermine the system. But system firmware is already
+very large and likely to contain bugs, let alone a kernel. And even if the entire boot was 
+secure the operating system or application server would likely contain bugs allowing in remote attackers anyway.</p>
+<p>On the open PC platform this system turned out to be too easy to defeat, and became abandoned outside of a few use
+cases involving disk encryption (with no remote attestation). Despite its failure in PCs, static roots of trust 
+worked well enough for games consoles where the entire boot sequence could be encrypted, locked down, attested to
+multi-player game networks and very carefully audited by a vertically integrated systems manufacturer. </p>
+<p>The next attempt introduced a <em>dynamic chain of trust</em> via <a href="https://en.wikipedia.org/wiki/Trusted_Execution_Technology">Intel TXT</a> and AMD SVM.
+TXT/SVM provided so-called "late launch" in which a hypervisor can be started up and measured whilst the system is
+running. The hypervisor can then measure and boot an operating system, which may be a small and special purpose
+operating system. This approach also failed to gain much traction, as at the time building a small special purpose
+OS was too difficult (whereas nowadays open source unikernel operating systems are more easily available), and booting
+a regular Linux faced many of the same problems as with the static root of trust: too many places to hide back doors,
+too many bugs for the system to be truly trustworthy.</p>
+<p>This is how we arrived at SGX. An enclave runs in user-space and does not require a large piece of code like a 
+hypervisor, kernel and system firmware to become a part of the remote attestation. Instead, only a small statically
+linked binary is loaded and protected. The code in the enclave can communicate with the host process by reading and
+writing from host memory. The TCB size is finally minimised to only what is strictly necessary - as long as your app
+is designed correctly.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="index.html" title="Welcome" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Welcome
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="architecture.html" title="Architecture" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Architecture
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="assets/javascripts/bundle.5f27aba8.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: ".",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "assets/javascripts/worker/search.27c6a5e6.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

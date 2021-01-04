@@ -1,0 +1,904 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.2.2">
+    
+    
+      
+        <title>Compiling and running - Conclave documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.a2408e81.min.css">
+      
+        <link rel="stylesheet" href="assets/stylesheets/palette.a46bcfb3.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#ef5350">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+        
+<link rel="preconnect dns-prefetch" href="https://www.google-analytics.com">
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-87760032-7","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="red" data-md-color-accent="red">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#first-enclave" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="." title="Conclave documentation" class="md-header-nav__button md-logo" aria-label="Conclave documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Conclave documentation
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Compiling and running
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="index.html" class="md-tabs__link">
+        Welcome
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="architecture.html" class="md-tabs__link">
+          Development
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="machine-setup.html" class="md-tabs__link">
+          Operations
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Conclave documentation" class="md-nav__button md-logo" aria-label="Conclave documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Conclave documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="index.html" title="Welcome" class="md-nav__link">
+      Welcome
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="enclaves.html" title="Enclaves" class="md-nav__link">
+      Enclaves
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Development
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Development" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Development
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Conclave architecture
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Conclave architecture" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Conclave architecture
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="architecture.html" title="Architecture" class="md-nav__link">
+      Architecture
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="mail.html" title="Mail" class="md-nav__link">
+      Mail
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="security.html" title="Security discussion" class="md-nav__link">
+      Security discussion
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" checked>
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Tutorial
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Tutorial" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Tutorial
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Compiling and running
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="tutorial.html" title="Compiling and running" class="md-nav__link md-nav__link--active">
+      Compiling and running
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-your-machine" class="md-nav__link">
+    Setting up your machine
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compiling-the-sample-enclave" class="md-nav__link">
+    Compiling the sample enclave
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-the-host-and-client" class="md-nav__link">
+    Running the host and client
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-on-windows-and-macos" class="md-nav__link">
+    Testing on Windows and macOS
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="writing-hello-world.html" title="Writing hello world" class="md-nav__link">
+      Writing hello world
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="api/index.html" title="API" class="md-nav__link">
+      API
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Operations
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Operations" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Operations
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1">
+    
+    <label class="md-nav__link" for="nav-4-1">
+      Server deployment
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Server deployment" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Server deployment
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="machine-setup.html" title="Machine setup" class="md-nav__link">
+      Machine setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="ias.html" title="IAS" class="md-nav__link">
+      IAS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="signing.html" title="Enclave signing" class="md-nav__link">
+      Enclave signing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="renewability.html" title="Renewability" class="md-nav__link">
+      Renewability
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="faq.html" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-your-machine" class="md-nav__link">
+    Setting up your machine
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compiling-the-sample-enclave" class="md-nav__link">
+    Compiling the sample enclave
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-the-host-and-client" class="md-nav__link">
+    Running the host and client
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-on-windows-and-macos" class="md-nav__link">
+    Testing on Windows and macOS
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="first-enclave">First enclave<a class="headerlink" href="#first-enclave" title="Permanent link">&para;</a></h1>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<ul>
+<li>You need the Conclave SDK. If you don't have it please <a href="https://www.conclave.net">contact R3 and request a trial</a>.</li>
+<li>This tutorial assumes you've read and understood the <a href="enclaves.html">conceptual overview</a>.</li>
+</ul>
+</div>
+<p>You can find a <strong>sample app</strong> in the <code>hello-world</code> directory of your SDK. You can use this app as a template 
+for your own if you want a quick start. We will cover:</p>
+<ol>
+<li>How to set up your machine.</li>
+<li>How to compile and run the sample app.</li>
+<li><a href="writing-hello-world.html">How to write the sample app</a>.</li>
+</ol>
+<h2 id="setting-up-your-machine">Setting up your machine<a class="headerlink" href="#setting-up-your-machine" title="Permanent link">&para;</a></h2>
+<p>You need Java 8 or 11 (your choice) and Gradle, so make sure you've installed those first. Alternatively use an IDE
+like IntelliJ IDEA, which can download and set up both Gradle and the Java Development Kit (JDK) for you.</p>
+<p>Currently, we support developing enclaves on Windows, macOS and Linux. However, there are a few platform specific
+differences to be aware of.</p>
+<p>Firstly, if you plan on building enclaves using the <a href="writing-hello-world.html#donfigure-the-enclave-module"><code>graalvm_native_image</code> runtime</a>
+(which is the default) on Windows and macOS you will need to install Docker. The <code>graalvm_native_image</code> build
+process requires access to a Linux build environment which Conclave can automatically configure during the build
+for you if Docker is installed. If you do not have Docker installed then you can still build enclaves targeting
+the <code>avian</code> runtime on Windows and macOS.</p>
+<p>Secondly, executing enclaves without using the "mock mode" requires Linux or a Linux container (e.g. via Docker 
+or Windows Subsystem for Linux) and there are no plans to change this.  Apple doesn't support SGX and the Windows 
+API support is too limited for use at this time. <a href="#testing-on-windows-and-macos">Instructions are provided below</a> 
+to show you how to use Docker on Windows and macOS to run your enclaves in "simulation mode". Alternatively, for 
+day to day development the mock API is plenty sufficient and allows you to debug into enclave calls as well. 
+Compiling a real enclave is only needed for integration testing or real deployment.</p>
+<p>Enclaves can run in simulation mode without requiring any special setup of Linux or SGX capable hardware. However you 
+of course get no hardware protections. To run against real SGX hardware you must perform some <a href="machine-setup.html">additional machine setup</a>.</p>
+<h2 id="compiling-the-sample-enclave">Compiling the sample enclave<a class="headerlink" href="#compiling-the-sample-enclave" title="Permanent link">&para;</a></h2>
+<p><strong>Step 1:</strong> Import the project</p>
+<p><img alt="Import the project" src="images/import.png" /></p>
+<p><strong>Step 2:</strong> Look at the Conclave SDK's top level directory</p>
+<p><img alt="Look at the SDK's top level directory" src="images/import-sdk.png" /> </p>
+<p><strong>Step 3:</strong> Click "import" when notified that there's a Gradle build script</p>
+<p><img alt="Import Gradle script" src="images/gradle-import.png" /> </p>
+<p><strong>Step 4:</strong> If on Linux or Windows, double-click on <code>:host:assemble</code>. Voila! <img alt="😄" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f604.svg" title=":smile:" /> You have just built your first enclave.</p>
+<p><img alt="Double-click on :host:assemble" src="images/gradle-tasks.png" /></p>
+<p>Now explore the <code>build</code> folder. </p>
+<p><img alt="Explore the build folder." src="images/build-artifact.png" />  </p>
+<p>As normal with Gradle, the <code>assemble</code> task has bundled the program into a zip, with startup scripts. These scripts are
+nothing special - they just set up the classpath. You could also e.g. make a fat JAR if you want. </p>
+<h2 id="running-the-host-and-client">Running the host and client<a class="headerlink" href="#running-the-host-and-client" title="Permanent link">&para;</a></h2>
+<p>You will need Linux to test your enclave. Just run the host app like any app - no special startup scripts or setup is 
+required with Conclave!</p>
+<table class="bash codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="bash codehilite"><pre><span></span><code><span class="nb">cd</span> host/build/distributions
+tar xvf host.tar
+./host/bin/host
+</code></pre></div>
+</td></tr></table>
+<p>If your Linux machine doesn't have SGX, you should see something like this:</p>
+<table class="text codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="text codehilite"><pre><span></span><code>This platform does not support hardware enclaves: SGX_DISABLED_UNSUPPORTED_CPU: SGX is not supported by the CPU in this system
+This attestation requires 2163 bytes.
+Remote attestation for enclave F86798C4B12BE12073B87C3F57E66BCE7A541EE3D0DDA4FE8853471139C9393F:
+  - Mode: SIMULATION
+  - Code signing key hash: 01280A6F7EAC8799C5CFDB1F11FF34BC9AE9A5BC7A7F7F54C77475F445897E3B
+  - Public signing key: 302A300506032B65700321000568034F335BE25386FD405A5997C25F49508AA173E0B413113F9A80C9BBF542
+  - Public encryption key: A0227D6D11078AAB73407D76DB9135C0D43A22BEACB0027D166937C18C5A7973
+  - Product ID: 1
+  - Revocation level: 0
+
+Assessed security level at 2020-07-17T16:31:51.894697Z is INSECURE
+  - Enclave is running in simulation mode.
+
+Reversing Hello World!: !dlrow olleH
+
+Listening on port 9999. Use the client app to send strings for reversal.
+</code></pre></div>
+</td></tr></table>
+<p>The host has loaded the enclave, obtained its remote attestation (the <code>EnclaveInstanceInfo</code> object), printed it out,
+asked the enclave to reverse a string and finally opened up a TCP port which will now listen for requests from remote
+clients.</p>
+<p>So, let's run the client app:</p>
+<table class="bash codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="bash codehilite"><pre><span></span><code>./gradlew client:run --args<span class="o">=</span><span class="s2">&quot;reverse me!&quot;</span>
+</code></pre></div>
+</td></tr></table>
+<p>The client will connect to the host, download the <code>EnclaveInstanceInfo</code>, check it, and then send an encrypted string
+to reverse. The host will deliver this encrypted string to the enclave, and the enclave will send back to the client
+the encrypted reversed response:</p>
+<table class="text codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="text codehilite"><pre><span></span><code>Reading a remote attestation of length 2163 bytes.
+Sending the encrypted mail to the host.
+Reading reply mail of length 196 bytes.
+Enclave reversed &#39;reverse me!&#39; and gave us the answer &#39;!em esrever&#39;
+</code></pre></div>
+</td></tr></table>
+<p>Try this:</p>
+<table class="bash codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="bash codehilite"><pre><span></span><code>./gradlew client:run --args<span class="o">=</span><span class="s2">&quot;aibohphobia&quot;</span>
+</code></pre></div>
+</td></tr></table>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Aibohphobia is the fear of palindromes.</p>
+</div>
+<h2 id="testing-on-windows-and-macos">Testing on Windows and macOS<a class="headerlink" href="#testing-on-windows-and-macos" title="Permanent link">&para;</a></h2>
+<p>The easiest way to test your code is always to use the mock environment. This runs everything inside the host JVM
+and thus gives high performance, cross platform portability and full debugging support, as all the SGX infrastructure
+is kept out of the way. However, it means you aren't testing on the same JVM that will be used in the enclave. To
+create and run a real enclave on Windows or macOS you will need to run the host on a Linux virtual machine with a
+simulation mode enclave. The easiest way to do this is to use Docker, which is integrated with Conclave and hides the 
+virtual machine setup from you.</p>
+<p>Install Docker and then follow these instructions.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you are using the <code>avian</code> runtime then you may need to run this command in the root of your Gradle project 
+first: <code>gradlew setupLinuxExecEnvironment</code>. You don't need to do this if you use the <code>graalvm_native_image</code>
+runtime.</p>
+</div>
+<p>The following command creates a temporary Docker container that mounts the current directory then runs the host within 
+the container. The container is automatically stopped and removed after the host exits. The host may use port 8080 for 
+networking.  </p>
+<p>Note that this command should be run from the root of your Gradle project, assuming your host program is in a module
+called <code>host</code> - adjust the paths if not.</p>
+<p><strong><em>Windows PowerShell</em></strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>docker run -t --rm -p 8080:8080 -v <span class="cp">${</span><span class="n">PWD</span><span class="cp">}</span>:/project -w /project conclave-build ./host/build/install/host/bin/host
+</code></pre></div>
+</td></tr></table>
+<p><strong><em>macOS Terminal</em></strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">docker run -t -p 8080:8080 --rm -v $PWD:/project -w /project --user $(id -u):$(id -g) conclave-build ./host/build/install/host/bin/host</span>
+</code></pre></div>
+</td></tr></table>
+<p>You may want to create an IntelliJ launch configuration to automatically rebuild the host and enclave (if needed) 
+before running the host in the container.</p>
+<p>Put the command above in a .cmd batch file (Windows) or a .sh file (macOS) and then use the "Shell script" launch 
+configuration type, and add a Gradle task in the "Before launch" section. You should make it depend on the host's 
+<code>installDist</code> target. You will then be able to click the run icon in your IDE to build and start up the Java host app 
+inside the Docker container.</p>
+<p><img alt="import project" src="images/test-deploy.png" /></p>
+<p>If on macOS and on a version of IntelliJ before 2020.3 you can set the default interpreter to <code>exec</code> - this will make 
+IntelliJ complain when you try to save or run it, but if you bypass those warnings it will cause the terminal tab to
+close when the host exits, which keeps your terminal area clean. Versions of IntelliJ after 2020.3 don't need this as
+they provide a check box to control whether the host will be in a Run tab or a terminal tab. </p>
+<p>If you get stuck please contact <a href="mailto:conclave-discuss@groups.io">conclave-discuss@groups.io</a> and ask for help!  </p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="security.html" title="Security discussion" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Security discussion
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="writing-hello-world.html" title="Writing hello world" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Writing hello world
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="assets/javascripts/bundle.5f27aba8.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: ".",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "assets/javascripts/worker/search.27c6a5e6.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,12 @@
+dependencies {
+    // gRPC: A sophisticated but simple RPC framework from Google.
+    def gRPCVersion = "1.13.2"
+    api "io.grpc:grpc-core:$gRPCVersion"
+    implementation "io.grpc:grpc-stub:$gRPCVersion"
+
+    // Conclave Host: loading enclaves and communicating with them.
+    implementation "com.r3.conclave:conclave-host:$conclaveVersion"
+    implementation "com.r3.conclave:conclave-client:$conclaveVersion"
+
+    runtimeOnly "io.grpc:grpc-netty:$gRPCVersion"
+}

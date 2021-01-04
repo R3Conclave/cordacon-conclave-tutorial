@@ -1,0 +1,61 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.r3.conclave",
+    "module": "linux-sgx-release",
+    "version": "0.4-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.6.1",
+      "buildId": "dwed36xq7jef7lqgidung2kjcu"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "linux-sgx-release-0.4-SNAPSHOT.jar",
+          "url": "linux-sgx-release-0.4-SNAPSHOT.jar",
+          "size": 5219950,
+          "sha512": "01affa870e313c9ec000c81a2a043e4a627abd8075d5fb67498b257be27872060f35ca17a11678f8001ea4ec5916715d9d0e7dd3a4baa4995afbf24ac315dcfa",
+          "sha256": "be92d3f1490f277ea97126b6f9aa4efc848d89407c04b2457cd923f0144ed90d",
+          "sha1": "acf01293ad9637c9dfaaa1c9d101bc6373b4daac",
+          "md5": "00f0b664f14e99e80626805dfa797072"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "linux-sgx-release-0.4-SNAPSHOT.jar",
+          "url": "linux-sgx-release-0.4-SNAPSHOT.jar",
+          "size": 5219950,
+          "sha512": "01affa870e313c9ec000c81a2a043e4a627abd8075d5fb67498b257be27872060f35ca17a11678f8001ea4ec5916715d9d0e7dd3a4baa4995afbf24ac315dcfa",
+          "sha256": "be92d3f1490f277ea97126b6f9aa4efc848d89407c04b2457cd923f0144ed90d",
+          "sha1": "acf01293ad9637c9dfaaa1c9d101bc6373b4daac",
+          "md5": "00f0b664f14e99e80626805dfa797072"
+        }
+      ]
+    }
+  ]
+}

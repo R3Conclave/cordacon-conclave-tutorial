@@ -1,0 +1,50 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.4.10' apply false
+}
+
+subprojects {
+    apply plugin: "java-library"
+    apply plugin: "org.jetbrains.kotlin.jvm"
+
+    repositories {
+        // Use jcenter for resolving dependencies.
+        // You can declare any Maven/Ivy/file repository here.
+        jcenter()
+        maven {
+            url = rootProject.file(conclaveRepo)
+        }
+        mavenCentral()
+    }
+
+    dependencies {
+        // Align versions of all Kotlin components
+        implementation platform('org.jetbrains.kotlin:kotlin-bom')
+
+        // Use the Kotlin JDK 8 standard library.
+        implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
+
+        // Use AssertJ for testing.
+        testImplementation 'org.assertj:assertj-core:3.17.2'
+
+        // Use JUnit 5
+        testImplementation "org.junit.jupiter:junit-jupiter:5.6.0"
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+
+    compileKotlin {
+        kotlinOptions {
+            freeCompilerArgs = ['-Xjvm-default=enable', '-Xopt-in=kotlin.RequiresOptIn']
+            jvmTarget = "1.8"
+        }
+    }
+
+    compileTestKotlin {
+        kotlinOptions {
+            freeCompilerArgs = ['-Xjvm-default=enable']
+            jvmTarget = "1.8"
+        }
+    }
+}

@@ -1,0 +1,61 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.r3.conclave",
+    "module": "native-host-simulation",
+    "version": "0.4-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.6.1",
+      "buildId": "dwed36xq7jef7lqgidung2kjcu"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "native-host-simulation-0.4-SNAPSHOT.jar",
+          "url": "native-host-simulation-0.4-SNAPSHOT.jar",
+          "size": 2159954,
+          "sha512": "df0f6f5e66ed8fae8633c679ff28e29b0887d5ca0a9848b3ccc30d266cf3e2d893f5beb324c809b2866e0af5f113893fe1b0d90ec34f343819670c743c70d5f7",
+          "sha256": "b3a2745c9619a214abdbfc4d2c2142c1dd953ca0fa9dfacd8fc544779743dc3e",
+          "sha1": "9de20b58489a99d5e372dac71af62d47dbe2d90d",
+          "md5": "8c12c86c7ba37be857d7c0c8f5770e19"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "native-host-simulation-0.4-SNAPSHOT.jar",
+          "url": "native-host-simulation-0.4-SNAPSHOT.jar",
+          "size": 2159954,
+          "sha512": "df0f6f5e66ed8fae8633c679ff28e29b0887d5ca0a9848b3ccc30d266cf3e2d893f5beb324c809b2866e0af5f113893fe1b0d90ec34f343819670c743c70d5f7",
+          "sha256": "b3a2745c9619a214abdbfc4d2c2142c1dd953ca0fa9dfacd8fc544779743dc3e",
+          "sha1": "9de20b58489a99d5e372dac71af62d47dbe2d90d",
+          "md5": "8c12c86c7ba37be857d7c0c8f5770e19"
+        }
+      ]
+    }
+  ]
+}

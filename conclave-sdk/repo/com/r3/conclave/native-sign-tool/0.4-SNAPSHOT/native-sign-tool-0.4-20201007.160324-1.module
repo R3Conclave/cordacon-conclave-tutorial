@@ -1,0 +1,61 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.r3.conclave",
+    "module": "native-sign-tool",
+    "version": "0.4-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.6.1",
+      "buildId": "dwed36xq7jef7lqgidung2kjcu"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "native-sign-tool-0.4-SNAPSHOT.jar",
+          "url": "native-sign-tool-0.4-SNAPSHOT.jar",
+          "size": 4289102,
+          "sha512": "1081c2f12780183bf691904e4f1093e77a8a1a685557f1ff35daeb4f304780913def9af3609df6720c289992e02e223dfdcf5c2b85b99d5bf5797bf895504706",
+          "sha256": "5bb52cb6fdc2fe5e8167542797fa1d612d56fe156c04ae4731bf5c5dcc125afa",
+          "sha1": "4e9c93c2bc726287798d339f20dcedb01432e738",
+          "md5": "841675dbcd3ba3dcb536715b31451ab7"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "native-sign-tool-0.4-SNAPSHOT.jar",
+          "url": "native-sign-tool-0.4-SNAPSHOT.jar",
+          "size": 4289102,
+          "sha512": "1081c2f12780183bf691904e4f1093e77a8a1a685557f1ff35daeb4f304780913def9af3609df6720c289992e02e223dfdcf5c2b85b99d5bf5797bf895504706",
+          "sha256": "5bb52cb6fdc2fe5e8167542797fa1d612d56fe156c04ae4731bf5c5dcc125afa",
+          "sha1": "4e9c93c2bc726287798d339f20dcedb01432e738",
+          "md5": "841675dbcd3ba3dcb536715b31451ab7"
+        }
+      ]
+    }
+  ]
+}

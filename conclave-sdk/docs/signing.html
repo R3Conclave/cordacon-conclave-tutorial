@@ -1,0 +1,1243 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.2.2">
+    
+    
+      
+        <title>Enclave signing - Conclave documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.a2408e81.min.css">
+      
+        <link rel="stylesheet" href="assets/stylesheets/palette.a46bcfb3.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#ef5350">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+        
+<link rel="preconnect dns-prefetch" href="https://www.google-analytics.com">
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-87760032-7","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="red" data-md-color-accent="red">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#why-is-signing-required" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="." title="Conclave documentation" class="md-header-nav__button md-logo" aria-label="Conclave documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Conclave documentation
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Enclave signing
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="index.html" class="md-tabs__link">
+        Welcome
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="architecture.html" class="md-tabs__link">
+          Development
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="machine-setup.html" class="md-tabs__link">
+          Operations
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Conclave documentation" class="md-nav__button md-logo" aria-label="Conclave documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Conclave documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="index.html" title="Welcome" class="md-nav__link">
+      Welcome
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="enclaves.html" title="Enclaves" class="md-nav__link">
+      Enclaves
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Development
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Development" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Development
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Conclave architecture
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Conclave architecture" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Conclave architecture
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="architecture.html" title="Architecture" class="md-nav__link">
+      Architecture
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="mail.html" title="Mail" class="md-nav__link">
+      Mail
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="security.html" title="Security discussion" class="md-nav__link">
+      Security discussion
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Tutorial
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Tutorial" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Tutorial
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="tutorial.html" title="Compiling and running" class="md-nav__link">
+      Compiling and running
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="writing-hello-world.html" title="Writing hello world" class="md-nav__link">
+      Writing hello world
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="api/index.html" title="API" class="md-nav__link">
+      API
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Operations
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Operations" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Operations
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1">
+    
+    <label class="md-nav__link" for="nav-4-1">
+      Server deployment
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Server deployment" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Server deployment
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="machine-setup.html" title="Machine setup" class="md-nav__link">
+      Machine setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="ias.html" title="IAS" class="md-nav__link">
+      IAS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Enclave signing
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="signing.html" title="Enclave signing" class="md-nav__link md-nav__link--active">
+      Enclave signing
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-is-signing-required" class="md-nav__link">
+    Why is signing required?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#who-can-sign" class="md-nav__link">
+    Who can sign
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-sign-your-enclaves" class="md-nav__link">
+    How to sign your enclaves
+  </a>
+  
+    <nav class="md-nav" aria-label="How to sign your enclaves">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signing-keys-for-simulation-and-debug-enclaves" class="md-nav__link">
+    Signing keys for simulation and debug enclaves
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obtaining-a-signing-key-for-release-enclaves" class="md-nav__link">
+    Obtaining a signing key for release enclaves
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signing-configurations" class="md-nav__link">
+    Signing configurations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-configure-signing-for-your-enclaves" class="md-nav__link">
+    How to configure signing for your enclaves
+  </a>
+  
+    <nav class="md-nav" aria-label="How to configure signing for your enclaves">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dummy-key" class="md-nav__link">
+    Dummy Key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#private-key" class="md-nav__link">
+    Private Key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#external-key" class="md-nav__link">
+    External Key
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generating-keys-for-signing-an-enclave" class="md-nav__link">
+    Generating keys for signing an enclave
+  </a>
+  
+    <nav class="md-nav" aria-label="Generating keys for signing an enclave">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-an-rsa-private-key-suitable-for-signing-enclaves" class="md-nav__link">
+    Creating an RSA private key suitable for signing enclaves
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-password-protected-rsa-private-key-suitable-for-signing-enclaves" class="md-nav__link">
+    Creating a password protected RSA private key suitable for signing enclaves
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obtaining-the-public-key-from-a-private-key" class="md-nav__link">
+    Obtaining the public key from a private key
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-a-signed-enclave" class="md-nav__link">
+    Building a signed enclave
+  </a>
+  
+    <nav class="md-nav" aria-label="Building a signed enclave">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-the-prepareforsigning-task-to-the-host-buildgradle" class="md-nav__link">
+    Add the prepareForSigning task to the host build.gradle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-the-signing-material" class="md-nav__link">
+    Generate the signing material
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sign-the-material" class="md-nav__link">
+    Sign the material
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complete-the-build" class="md-nav__link">
+    Complete the build
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="renewability.html" title="Renewability" class="md-nav__link">
+      Renewability
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="faq.html" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-is-signing-required" class="md-nav__link">
+    Why is signing required?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#who-can-sign" class="md-nav__link">
+    Who can sign
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-sign-your-enclaves" class="md-nav__link">
+    How to sign your enclaves
+  </a>
+  
+    <nav class="md-nav" aria-label="How to sign your enclaves">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signing-keys-for-simulation-and-debug-enclaves" class="md-nav__link">
+    Signing keys for simulation and debug enclaves
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obtaining-a-signing-key-for-release-enclaves" class="md-nav__link">
+    Obtaining a signing key for release enclaves
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signing-configurations" class="md-nav__link">
+    Signing configurations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-configure-signing-for-your-enclaves" class="md-nav__link">
+    How to configure signing for your enclaves
+  </a>
+  
+    <nav class="md-nav" aria-label="How to configure signing for your enclaves">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dummy-key" class="md-nav__link">
+    Dummy Key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#private-key" class="md-nav__link">
+    Private Key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#external-key" class="md-nav__link">
+    External Key
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generating-keys-for-signing-an-enclave" class="md-nav__link">
+    Generating keys for signing an enclave
+  </a>
+  
+    <nav class="md-nav" aria-label="Generating keys for signing an enclave">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-an-rsa-private-key-suitable-for-signing-enclaves" class="md-nav__link">
+    Creating an RSA private key suitable for signing enclaves
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-password-protected-rsa-private-key-suitable-for-signing-enclaves" class="md-nav__link">
+    Creating a password protected RSA private key suitable for signing enclaves
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obtaining-the-public-key-from-a-private-key" class="md-nav__link">
+    Obtaining the public key from a private key
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-a-signed-enclave" class="md-nav__link">
+    Building a signed enclave
+  </a>
+  
+    <nav class="md-nav" aria-label="Building a signed enclave">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-the-prepareforsigning-task-to-the-host-buildgradle" class="md-nav__link">
+    Add the prepareForSigning task to the host build.gradle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-the-signing-material" class="md-nav__link">
+    Generate the signing material
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sign-the-material" class="md-nav__link">
+    Sign the material
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complete-the-build" class="md-nav__link">
+    Complete the build
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                  <h1>Enclave signing</h1>
+                
+                <p>Enclaves must be signed in order to be loaded. This section covers:</p>
+<ul>
+<li><em>Why</em> is signing required</li>
+<li><em>Who</em> can sign enclaves</li>
+<li><em>How</em> to sign your enclaves</li>
+</ul>
+<h2 id="why-is-signing-required">Why is signing required?<a class="headerlink" href="#why-is-signing-required" title="Permanent link">&para;</a></h2>
+<p>Signing requirements are a part of the Intel SGX architecture. The enclave signature is used for two different purposes:</p>
+<ol>
+<li>Linking different enclave versions together into an upgrade path, so new enclaves can decrypt data stored by or sent
+   to old enclaves.</li>
+<li>Authorising which enclaves can be executed on a host.</li>
+</ol>
+<p>Restricting which enclaves can launch on a host ensures that datacenter providers aren't hosting server processes they 
+can't examine or turn over to law enforcement. It also makes it harder for people to write malware with un-debuggable 
+cores, and is part of the privacy (anti-tracking) infrastructure in SGX.</p>
+<p>Using signatures to link binaries into a single upgrade path is the same technique used by Android and iOS to move
+permissions and stored data from old to new apps.</p>
+<p>Signing is also used to authorise which enclaves can start. Intel chips won't start an enclave unless it's signed by
+a key recognised by a launch approver.</p>
+<h2 id="who-can-sign">Who can sign<a class="headerlink" href="#who-can-sign" title="Permanent link">&para;</a></h2>
+<p>On the most common kind of hardware, permission from Intel is required to create a launchable enclave. Getting 
+whitelisted is free and can be done quickly. It's a similar process to getting an SSL certificate but using 
+different tools.</p>
+<p>On Xeon E CPUs with Intel SPS support in the chipset, and a recent enough kernel driver, the owner can add their 
+own whitelisting authorities via BIOS/UEFI firmware settings. This means they can whitelist their own 
+enclaves / enclave vendors.</p>
+<p>Current Conclave versions aren't able to use this capability at present. To run in production (fully secured) mode
+you need a whitelisted Intel key. We plan to implement support for the <em>flexible launch control</em> feature in future
+versions. At this time not much shipping hardware supports it however, so for near term uses you should plan on
+getting a whitelisted Intel key.</p>
+<h2 id="how-to-sign-your-enclaves">How to sign your enclaves<a class="headerlink" href="#how-to-sign-your-enclaves" title="Permanent link">&para;</a></h2>
+<h3 id="signing-keys-for-simulation-and-debug-enclaves">Signing keys for simulation and debug enclaves<a class="headerlink" href="#signing-keys-for-simulation-and-debug-enclaves" title="Permanent link">&para;</a></h3>
+<p>It is not necessary to use a whitelisted signature for enclaves built in simulation and debug modes. However, it
+is still required that these enclaves are signed. Conclave supports the generation of a dummy key during the build
+process that can be used for signing simulation and debug enclaves.</p>
+<h3 id="obtaining-a-signing-key-for-release-enclaves">Obtaining a signing key for release enclaves<a class="headerlink" href="#obtaining-a-signing-key-for-release-enclaves" title="Permanent link">&para;</a></h3>
+<p>Firstly, <a href="https://software.intel.com/en-us/sgx/request-license">get a commercial license</a>. This is a lightweight
+process and doesn't cost anything or impose other requirements. Following the instructions provided on that page 
+should allow you to get a signing key.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>It's up to you whether or not to store the key in an HSM.</p>
+</div>
+<h3 id="signing-configurations">Signing configurations<a class="headerlink" href="#signing-configurations" title="Permanent link">&para;</a></h3>
+<p>There are three different configurations available for signing enclaves using Conclave:</p>
+<ol>
+<li>Using a dummy key</li>
+<li>Using a private key</li>
+<li>Using an external process such as a signing service or HSM</li>
+</ol>
+<p>Dummy keys are only useful for signing simulation and debug enclaves. A release enclave signed with a dummy key
+will not be whitelisted on any platform so will not be allowed to load.</p>
+<p>A private key can be used to sign enclaves directly within the build process. The key must be accessible on the
+filesystem of the machine building the enclave.</p>
+<p>An external process is used when the signing key is not available on the machine building the enclave, or a 
+manual or air-gapped process is required to sign the enclave. In this case the Conclave project  is built in two 
+steps. The first step generates the material to be signed. The second step provides the signed material to the 
+Conclave build to continue and complete the build process.</p>
+<h3 id="how-to-configure-signing-for-your-enclaves">How to configure signing for your enclaves<a class="headerlink" href="#how-to-configure-signing-for-your-enclaves" title="Permanent link">&para;</a></h3>
+<p>The signing method used by your enclaves is configured in the <code>build.gradle</code> file for your enclave project. You can
+specify different signing settings for simulation, debug and release in the same project.</p>
+<p>The signing configuration is specified inside the relevant enclave type inside the conclave configuration. For
+example:</p>
+<table class="groovy codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="groovy codehilite"><pre><span></span><code><span class="n">conclave</span> <span class="o">{</span>
+    <span class="n">simulation</span> <span class="o">{</span>
+        <span class="c1">// Simulation signing configuration using a dummy key</span>
+        <span class="n">signingType</span> <span class="o">=</span> <span class="n">dummyKey</span>
+    <span class="o">}</span>
+
+    <span class="n">debug</span> <span class="o">{</span>
+        <span class="c1">// Debug signing configuration using a private key</span>
+        <span class="n">signingType</span> <span class="o">=</span> <span class="n">privateKey</span>
+        <span class="n">signingKey</span> <span class="o">=</span> <span class="n">file</span><span class="o">(</span><span class="s2">&quot;../signing/sample_private_key.pem&quot;</span><span class="o">)</span>
+    <span class="o">}</span>
+
+    <span class="n">release</span> <span class="o">{</span>
+        <span class="c1">// Release signing configuration using an external key</span>
+        <span class="n">signingType</span> <span class="o">=</span> <span class="n">externalKey</span>
+        <span class="n">mrsignerSignature</span> <span class="o">=</span> <span class="n">file</span><span class="o">(</span><span class="s2">&quot;../signing/signature.bin&quot;</span><span class="o">)</span>
+        <span class="n">mrsignerPublicKey</span> <span class="o">=</span> <span class="n">file</span><span class="o">(</span><span class="s2">&quot;../signing/external_signing_public.pem&quot;</span><span class="o">)</span>
+        <span class="n">signatureDate</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Date</span><span class="o">(</span><span class="mi">1970</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">1</span><span class="o">)</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>For simulation and debug enclaves <code>signingType</code> defaults to <code>dummyKey</code> so the configuration can be
+optionally omitted.</p>
+<p>Release enclaves default to having a <code>signingType</code> of <code>externalKey</code> so the configuration parameters for the
+external signing type must be specified. Alternatively the <code>signingType</code> can be changed to a different type. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Changing the signing type of a release enclave to <code>dummyKey</code> will result in an enclave that cannot be
+used as it will never be whitelisted on an SGX platform.</p>
+</div>
+<p>The configuration consists of a set of properties which depend on the signing type.</p>
+<h4 id="dummy-key">Dummy Key<a class="headerlink" href="#dummy-key" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th align="left">Property</th>
+<th align="left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">signingType</td>
+<td align="left">Must be set to <code>dummyKey</code>. This is the default signing type for simulation and debug enclaves.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="private-key">Private Key<a class="headerlink" href="#private-key" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th align="left">Property</th>
+<th align="left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">signingType</td>
+<td align="left">Must be set to <code>privateKey</code>.</td>
+</tr>
+<tr>
+<td align="left">signingKey</td>
+<td align="left">The file that contains the private key to use when signing the enclave. This can be an absolute path or relative to the enclave project directory.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="external-key">External Key<a class="headerlink" href="#external-key" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th align="left">Property</th>
+<th align="left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">signingType</td>
+<td align="left">Must be set to <code>externalKey</code>. This is the default signing type for release enclaves.</td>
+</tr>
+<tr>
+<td align="left">signatureDate</td>
+<td align="left">Specifies the date to be embedded in the material generated in the first stage of the external key signing process.</td>
+</tr>
+<tr>
+<td align="left">signingMaterial</td>
+<td align="left">The file that that Conclave will generate when preparing an enclave for signing in the first stage of the external key signing process. The resulting file needs to be signed by the external signing process. This can be an absolute path or relative to the enclave project directory. If this is omitted then the default filename of <code>build/enclave/[Simulation|Debug|Release]/signing_material.bin</code> is used</td>
+</tr>
+<tr>
+<td align="left">mrsignerPublicSignature</td>
+<td align="left">Used in the second part of the external key process to specify the file containing the signature generated by the external signing process. This can be an absolute path or relative to the enclave project directory.</td>
+</tr>
+<tr>
+<td align="left">mrsignerPublicKey</td>
+<td align="left">Used in the second part of the external key process to specify the file containing the public part of the key that was used to externally sign the signing material. This can be an absolute path or relative to the enclave project directory.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="generating-keys-for-signing-an-enclave">Generating keys for signing an enclave<a class="headerlink" href="#generating-keys-for-signing-an-enclave" title="Permanent link">&para;</a></h3>
+<p>When using <code>privateKey</code> or <code>externalKey</code> signing types you can create your own keys
+for testing or production:</p>
+<h4 id="creating-an-rsa-private-key-suitable-for-signing-enclaves">Creating an RSA private key suitable for signing enclaves<a class="headerlink" href="#creating-an-rsa-private-key-suitable-for-signing-enclaves" title="Permanent link">&para;</a></h4>
+<p>The generated key can be used to sign enclaves using the <code>privateKey</code> or <code>externalKey</code> signing types.
+When using the <code>externalKey</code> type you will need to generate the public key from the private key.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">openssl genrsa -out my_private_key.pem -3 3072</span>
+</code></pre></div>
+</td></tr></table>
+<h4 id="creating-a-password-protected-rsa-private-key-suitable-for-signing-enclaves">Creating a password protected RSA private key suitable for signing enclaves<a class="headerlink" href="#creating-a-password-protected-rsa-private-key-suitable-for-signing-enclaves" title="Permanent link">&para;</a></h4>
+<p>The generated key can only be used for the <code>externalKey</code> signing type as it prompts for a password during
+use.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">openssl genrsa -aes128 -out my_private_key.pem -3 3072</span>
+</code></pre></div>
+</td></tr></table>
+<h4 id="obtaining-the-public-key-from-a-private-key">Obtaining the public key from a private key<a class="headerlink" href="#obtaining-the-public-key-from-a-private-key" title="Permanent link">&para;</a></h4>
+<p>The public key is required for the <code>externalKey</code> signing type.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">openssl rsa -in my_private_key.pem -pubout -out my_public_key.pem</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="building-a-signed-enclave">Building a signed enclave<a class="headerlink" href="#building-a-signed-enclave" title="Permanent link">&para;</a></h3>
+<p>Signing is performed automatically during the build process when using a dummy or private key.</p>
+<p>Additional steps are required when using an external key.</p>
+<h4 id="add-the-prepareforsigning-task-to-the-host-buildgradle">Add the <code>prepareForSigning</code> task to the host <code>build.gradle</code><a class="headerlink" href="#add-the-prepareforsigning-task-to-the-host-buildgradle" title="Permanent link">&para;</a></h4>
+<p>This is an optional but recommended step to create a more consistent calling convention 
+for invoking Gradle. It adds a Gradle task that can be called regardless of the build type of the enclave.</p>
+<p>Add the following code to your <em>host</em> <code>build.gradle</code> file. This adds a new Gradle task that
+can be used to generate the material that will be signed by the external signing process.</p>
+<table class="groovy codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="groovy codehilite"><pre><span></span><code><span class="n">tasks</span><span class="o">.</span><span class="na">register</span><span class="o">(</span><span class="s2">&quot;prepareForSigning&quot;</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">it</span><span class="o">.</span><span class="na">dependsOn</span><span class="o">(</span><span class="s2">&quot;:enclave:generateEnclaveSigningMaterial&quot;</span> <span class="o">+</span> <span class="n">mode</span><span class="o">.</span><span class="na">capitalize</span><span class="o">())</span>
+<span class="o">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>The task works by using the <code>mode</code> Gradle property, which is set to one of <code>simulation</code>, <code>debug</code> or <code>release</code>
+depending on which enclave type is currently being built, to set a dependency on the relevant Conclave task that generates
+the signing material. </p>
+<p>The task makes the following two Gradle invocations equivalent:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">./gradlew prepareForSigning -PenclaveMode=&quot;Release&quot;</span>
+<span class="err">./gradlew :enclave:generateEnclaveSigningMaterialRelease</span>
+</code></pre></div>
+</td></tr></table>
+<p>See the <a href="tutorial.html">tutorial</a> and the <code>hello-world</code> sample in the Conclave SDK for an example of this configuration.</p>
+<h4 id="generate-the-signing-material">Generate the signing material<a class="headerlink" href="#generate-the-signing-material" title="Permanent link">&para;</a></h4>
+<p>Invoke Gradle to generate the files that need to be signed by the external signing process.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">./gradlew prepareForSigning -PenclaveMode=&quot;Release&quot;</span>
+</code></pre></div>
+</td></tr></table>
+<p>The output of this stage is a file that contains the material to be signed in <code>enclave/build/enclave/Release/signing_material.bin</code></p>
+<h4 id="sign-the-material">Sign the material<a class="headerlink" href="#sign-the-material" title="Permanent link">&para;</a></h4>
+<p>Perform the required steps to manually sign the file generated in the previous step. This might require copying the file onto a different platform or onto an HSM to generate the signed file.</p>
+<p>As an example, given a private key the following command can be used to sign the file:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">openssl dgst -sha256 -out signature.bin -sign my_private_key.pem -keyform PEM signing_material.bin</span>
+</code></pre></div>
+</td></tr></table>
+<p>Once completed, copy the signed file and the public key back onto the build system into the location specified in the <code>mrsignerPublicSignature</code> and <code>mrsignerPublicKey</code> properties in the enclave signing configuration.</p>
+<h4 id="complete-the-build">Complete the build<a class="headerlink" href="#complete-the-build" title="Permanent link">&para;</a></h4>
+<p>Invoke Gradle to complete the build.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">./gradlew build -PenclaveMode=&quot;Release&quot;</span>
+</code></pre></div>
+</td></tr></table>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="ias.html" title="IAS" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                IAS
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="renewability.html" title="Renewability" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Renewability
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="assets/javascripts/bundle.5f27aba8.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: ".",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "assets/javascripts/worker/search.27c6a5e6.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

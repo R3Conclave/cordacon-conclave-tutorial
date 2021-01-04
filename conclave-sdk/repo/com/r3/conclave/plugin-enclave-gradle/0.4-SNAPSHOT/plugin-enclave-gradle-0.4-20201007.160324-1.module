@@ -1,0 +1,106 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.r3.conclave",
+    "module": "plugin-enclave-gradle",
+    "version": "0.4-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.6.1",
+      "buildId": "dwed36xq7jef7lqgidung2kjcu"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.localToProject": "public",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "plugin-enclave-gradle-0.4-SNAPSHOT.jar",
+          "url": "plugin-enclave-gradle-0.4-SNAPSHOT.jar",
+          "size": 109629,
+          "sha512": "5da8999d3c67e10208ff4af2da00ae1234e2519225d3103913f629f23e9d7b957bf11081f78c9dff5b1655e5978326e794013399d86f38a573924a24aa62442c",
+          "sha256": "7b7874f932373363c31aac88dab935cb384780dfddcaaf2e74c58e6b7b5eb29b",
+          "sha1": "4389f58a164f699601bf5c26468107bd360977d2",
+          "md5": "0f1b3151e516353405a1aee3e8c85bc3"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.localToProject": "public",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.github.jengelman.gradle.plugins",
+          "module": "shadow",
+          "version": {
+            "requires": "5.2.0"
+          },
+          "excludes": [
+            {
+              "group": "commons-logging",
+              "module": "commons-logging"
+            }
+          ]
+        },
+        {
+          "group": "io.github.classgraph",
+          "module": "classgraph",
+          "version": {
+            "requires": "4.8.69"
+          },
+          "excludes": [
+            {
+              "group": "commons-logging",
+              "module": "commons-logging"
+            }
+          ]
+        },
+        {
+          "group": "org.bouncycastle",
+          "module": "bcpkix-jdk15on",
+          "version": {
+            "requires": "1.66"
+          },
+          "excludes": [
+            {
+              "group": "commons-logging",
+              "module": "commons-logging"
+            }
+          ]
+        }
+      ],
+      "files": [
+        {
+          "name": "plugin-enclave-gradle-0.4-SNAPSHOT.jar",
+          "url": "plugin-enclave-gradle-0.4-SNAPSHOT.jar",
+          "size": 109629,
+          "sha512": "5da8999d3c67e10208ff4af2da00ae1234e2519225d3103913f629f23e9d7b957bf11081f78c9dff5b1655e5978326e794013399d86f38a573924a24aa62442c",
+          "sha256": "7b7874f932373363c31aac88dab935cb384780dfddcaaf2e74c58e6b7b5eb29b",
+          "sha1": "4389f58a164f699601bf5c26468107bd360977d2",
+          "md5": "0f1b3151e516353405a1aee3e8c85bc3"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.r3.conclave",
+    "module": "native-host-release",
+    "version": "0.4-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.6.1",
+      "buildId": "dwed36xq7jef7lqgidung2kjcu"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "native-host-release-0.4-SNAPSHOT.jar",
+          "url": "native-host-release-0.4-SNAPSHOT.jar",
+          "size": 2302579,
+          "sha512": "eebb0692ce2ca77902041afef81a86fc6e9f5a5adbf1840ebae57130d9fe1b2624b7a615c382dbc3c63547befdd5a6b64a5c2d4873ffc9e881a7ee6912a9ba20",
+          "sha256": "aed248051477b458574c16979b6439c23a72d277229acb907be8520daaa4012a",
+          "sha1": "c402acc59f765723b0c740eca8d1c3b992621dbc",
+          "md5": "5cd855916ef53081c486b7d462fbc268"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "native-host-release-0.4-SNAPSHOT.jar",
+          "url": "native-host-release-0.4-SNAPSHOT.jar",
+          "size": 2302579,
+          "sha512": "eebb0692ce2ca77902041afef81a86fc6e9f5a5adbf1840ebae57130d9fe1b2624b7a615c382dbc3c63547befdd5a6b64a5c2d4873ffc9e881a7ee6912a9ba20",
+          "sha256": "aed248051477b458574c16979b6439c23a72d277229acb907be8520daaa4012a",
+          "sha1": "c402acc59f765723b0c740eca8d1c3b992621dbc",
+          "md5": "5cd855916ef53081c486b7d462fbc268"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.r3.conclave",
+    "module": "native-host-debug",
+    "version": "0.4-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.6.1",
+      "buildId": "dwed36xq7jef7lqgidung2kjcu"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "native-host-debug-0.4-SNAPSHOT.jar",
+          "url": "native-host-debug-0.4-SNAPSHOT.jar",
+          "size": 4909664,
+          "sha512": "16e47bcf86ef017d9f0f3d429a30dda2453c7e60ce9e67c4079aeaee8d3e49271fe01260249eab1368f982531b612b63624f344b6b2a8b1c4da6330b3905eca4",
+          "sha256": "28e9acb6b3abc2e17e43fcd658398583575db2e7024ea11aee4e77eab88b155d",
+          "sha1": "4f4fef4696f4c380c83f111e9bd8c484898e4a7e",
+          "md5": "1b34bee077761edf2b906c2468b63bed"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "native-host-debug-0.4-SNAPSHOT.jar",
+          "url": "native-host-debug-0.4-SNAPSHOT.jar",
+          "size": 4909664,
+          "sha512": "16e47bcf86ef017d9f0f3d429a30dda2453c7e60ce9e67c4079aeaee8d3e49271fe01260249eab1368f982531b612b63624f344b6b2a8b1c4da6330b3905eca4",
+          "sha256": "28e9acb6b3abc2e17e43fcd658398583575db2e7024ea11aee4e77eab88b155d",
+          "sha1": "4f4fef4696f4c380c83f111e9bd8c484898e4a7e",
+          "md5": "1b34bee077761edf2b906c2468b63bed"
+        }
+      ]
+    }
+  ]
+}

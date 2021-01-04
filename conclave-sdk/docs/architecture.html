@@ -1,0 +1,1158 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.2.2">
+    
+    
+      
+        <title>Architecture - Conclave documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.a2408e81.min.css">
+      
+        <link rel="stylesheet" href="assets/stylesheets/palette.a46bcfb3.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#ef5350">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+        
+<link rel="preconnect dns-prefetch" href="https://www.google-analytics.com">
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-87760032-7","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="red" data-md-color-accent="red">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#architecture-overview" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="." title="Conclave documentation" class="md-header-nav__button md-logo" aria-label="Conclave documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Conclave documentation
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Architecture
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="index.html" class="md-tabs__link">
+        Welcome
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="architecture.html" class="md-tabs__link md-tabs__link--active">
+          Development
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="machine-setup.html" class="md-tabs__link">
+          Operations
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Conclave documentation" class="md-nav__button md-logo" aria-label="Conclave documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Conclave documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="index.html" title="Welcome" class="md-nav__link">
+      Welcome
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="enclaves.html" title="Enclaves" class="md-nav__link">
+      Enclaves
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Development
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Development" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Development
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" checked>
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Conclave architecture
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Conclave architecture" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Conclave architecture
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Architecture
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="architecture.html" title="Architecture" class="md-nav__link md-nav__link--active">
+      Architecture
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#primary-entities" class="md-nav__link">
+    Primary entities
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-attestation" class="md-nav__link">
+    Remote attestation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protocol-sequence-diagram" class="md-nav__link">
+    Protocol sequence diagram
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mail" class="md-nav__link">
+    Mail
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-and-debugging" class="md-nav__link">
+    Testing and debugging
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#virtual-machines-and-performance" class="md-nav__link">
+    Virtual machines and performance
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="mail.html" title="Mail" class="md-nav__link">
+      Mail
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="security.html" title="Security discussion" class="md-nav__link">
+      Security discussion
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Tutorial
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Tutorial" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Tutorial
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="tutorial.html" title="Compiling and running" class="md-nav__link">
+      Compiling and running
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="writing-hello-world.html" title="Writing hello world" class="md-nav__link">
+      Writing hello world
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="api/index.html" title="API" class="md-nav__link">
+      API
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Operations
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Operations" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Operations
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1">
+    
+    <label class="md-nav__link" for="nav-4-1">
+      Server deployment
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Server deployment" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Server deployment
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="machine-setup.html" title="Machine setup" class="md-nav__link">
+      Machine setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="ias.html" title="IAS" class="md-nav__link">
+      IAS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="signing.html" title="Enclave signing" class="md-nav__link">
+      Enclave signing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="renewability.html" title="Renewability" class="md-nav__link">
+      Renewability
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="faq.html" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#primary-entities" class="md-nav__link">
+    Primary entities
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-attestation" class="md-nav__link">
+    Remote attestation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protocol-sequence-diagram" class="md-nav__link">
+    Protocol sequence diagram
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mail" class="md-nav__link">
+    Mail
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-and-debugging" class="md-nav__link">
+    Testing and debugging
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#virtual-machines-and-performance" class="md-nav__link">
+    Virtual machines and performance
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="architecture-overview">Architecture overview<a class="headerlink" href="#architecture-overview" title="Permanent link">&para;</a></h1>
+<h2 id="primary-entities">Primary entities<a class="headerlink" href="#primary-entities" title="Permanent link">&para;</a></h2>
+<p>There are three entities in an application that uses Conclave:</p>
+<ol>
+<li>Enclaves</li>
+<li>Hosts</li>
+<li>Clients</li>
+</ol>
+<p><strong>Clients</strong> send and receive encrypted messages to/from enclaves by interacting with the host over the network.
+Conclave doesn't mandate any particular network protocol for client&lt;-&gt;host communication. It's up to you. However
+the content of the messages <em>is</em> defined, using the <a href="#mail">Mail</a> API. Mail is described below.</p>
+<p><strong>Host programs</strong> load enclaves. From a security perspective they are fully untrusted and assumed to be malicious at all
+times. Hosts are relied on to provide the enclave with resources but beyond that work only with encrypted data. In some
+kinds of app their function is primarily proxying communications from clients to enclaves, but sometimes they also assist
+with application logic. Hosts use a standard JVM like HotSpot.</p>
+<p><strong>Enclaves</strong> are classes that are loaded into a dedicated sub-JVM with a protected memory space, running inside the same
+operating system process as the host JVM. Because they don't share heaps the host may exchange only byte buffers with
+the enclave. Direct method calls also don't work out of the box: that would require you to add some sort of RPC system
+on top. In this way it's similar to interacting with a server over a network, except the enclave is fully local.</p>
+<p><img alt="Architecture Diagram" src="images/arch-diagram.png" /></p>
+<p>In the above diagram orange shaded boxes are untrusted and could attack the enclave: the host and operating system
+(which includes the BIOS, drivers and peripherals). Blue shaded boxes are part of the <em>trusted computing base</em> -
+the set of components that must be correct and non-malicious for the system to work. That includes the enclave and
+of course the CPU.  The client communicates with the enclave via the host. Both client and host interact with
+Intel servers to obtain relevant pieces of data proving the CPU is genuine and considered secure (see below for more
+information on this process). The enclave has a complex interaction with both operating system and host, in which the
+OS schedules the enclave onto the CPU and provides resources but is otherwise locked out of the enclave's operation.
+For its part, the enclave cannot interact with the OS directly and runs in what is effectively a "bare metal" embedded
+style environment. It cannot load DLLs/.so files or do system calls, so there's no way for it to do things like load
+files directly. It must ask the host to do it and use cryptography to prevent the malicious host from tampering with
+the data as it's loaded or saved.</p>
+<div class="admonition notice">
+<p class="admonition-title">Notice</p>
+<p>Because the enclave runtime environment isn't the same as a normal HotSpot JVM, you will need to test your enclave
+code carefully and avoid advanced features that the embedded JVM doesn't support, such as Java Flight Recorder.</p>
+</div>
+<h2 id="remote-attestation">Remote attestation<a class="headerlink" href="#remote-attestation" title="Permanent link">&para;</a></h2>
+<p>To use an enclave, clients need to know the network address where the host process for an enclave instance is
+running so they can send it messages, and they also need to obtain an <code>EnclaveInstanceInfo</code> object from the host.
+This could be downloaded on demand from the host, or it could be published somewhere. This object encapsulates a
+<em>remote attestation</em>. The client tests the <code>EnclaveInstanceInfo</code> against a set of constraints, depending on
+how flexible they want to be about software upgrades to the enclave. Constraints are represented by an
+<a href="/api/com/r3/conclave/client/EnclaveConstraint.html"><code>EnclaveConstraint</code></a> object, which can be read from/written to
+a small domain specific language suitable for embedding in config files, command line options and so on. A
+constraint may specify that a specific set of code hashes is required i.e. every version is whitelisted and no
+upgrade is possible until the constraint is adjusted. Or, it may specify a set of allowed signing keys, enabling
+enclave authors to release new versions whenever they want. In that scenario the enclave creator is trusted, 
+but the entity hosting the enclave instance may not be.</p>
+<p>When they're happy, they create encrypted messages using the key in the <code>EnclaveInstanceInfo</code>. By sending and
+receiving such messages to the host (and from there to the enclave), communication is established. See the <a href="#mail">Mail
+</a> section below for further discussion of this.</p>
+<p>Whilst the high level setup has just those three entities, real deployments have more:</p>
+<ol>
+<li>Intel</li>
+<li>Optionally, a cloud provider</li>
+<li>Optionally, an auditor</li>
+</ol>
+<p><strong>Intel.</strong> Intel's involvement in a deployed architecture is limited to providing the CPU hardware and running some servers.
+These servers provision the host with certificates guaranteeing authenticity of the chip (once, on initial setup)
+and provide the client with an assessment of the security of the host given a remote attestation (whenever the
+client requests it). If Intel's servers become unreachable by the clients that's not a problem, it just means the
+security of the host machine may degrade without the clients realising.</p>
+<p>For instance if host's SGX software stack is out of date and has known vulnerabilities, or if the BIOS configuration is
+not correct, this will be reported to the client by Intel's servers as part of verifying and processing the data inside
+the remote attestation provided by the client.</p>
+<p><strong>Cloud provider.</strong> A cloud provider needs to support SGX for Conclave to be usable. They may operate their own
+provisioning servers that take over from Intel's.</p>
+<div class="admonition notice">
+<p class="admonition-title">Notice</p>
+<p>Cloud providers running their own provisioning servers is a new feature of SGX and not yet supported by Conclave.</p>
+</div>
+<p><strong>Auditor.</strong> In the pure enclave-oriented model, the user is responsible for understanding what the enclave does before
+using it by reading the enclave's source code. If the user doesn't do this then enclaves have no point. In practice the
+user may wish to outsource this auditing to someone else.</p>
+<h2 id="protocol-sequence-diagram">Protocol sequence diagram<a class="headerlink" href="#protocol-sequence-diagram" title="Permanent link">&para;</a></h2>
+<p>This is what a typical interaction looks like:</p>
+<!---
+
+https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoic2VxdWVuY2VEaWFncmFtXG4gICAgXG4gICAgcGFydGljaXBhbnQgRW5jbGF2ZVxuICAgIHBhcnRpY2lwYW50IENsb3VkL0ludGVsXG4gICAgcGFydGljaXBhbnQgSG9zdFxuICAgIHBhcnRpY2lwYW50IENsaWVudFxuICAgIHBhcnRpY2lwYW50IEludGVsXG4gICAgXG4gICAgcmVjdCByZ2JhKDI1NSwgMCwgMjU1LCAwLjEpXG4gICAgICAgIE5vdGUgbGVmdCBvZiBIb3N0OiBPbiBpbml0aWFsIGRlcGxveVxuICAgICAgICBDbG91ZC9JbnRlbC0-Pkhvc3Q6IFByb3Zpc2lvbmluZyBjZXJ0c1xuICAgIGVuZFxuICAgIEhvc3QtPj5DbGllbnQ6IFNlbmQgcmVtb3RlIGF0dGVzdGF0aW9uXG4gICAgTm90ZSBvdmVyIENsaWVudDogVmVyaWZ5IG1lYXN1cmVtZW50XG4gICAgb3B0IE9jY2FzaW9uYWxseVxuICAgICAgICBDbGllbnQtLT4-SW50ZWw6IFJlcXVlc3QgYXNzZXNzbWVudFxuICAgICAgICBJbnRlbC0tPj5DbGllbnQ6IEhvc3Qgc3RpbGwgc2VjdXJlIVxuICAgIGVuZFxuICAgIENsaWVudC0-Pkhvc3Q6IEVuY3J5cHRlZCBtZXNzYWdlIG92ZXIgSVBcbiAgICBIb3N0LT4-RW5jbGF2ZTogRW5jcnlwdGVkIG1lc3NhZ2VcbiAgICBFbmNsYXZlLT4-SG9zdDogRW5jcnlwdGVkIHJlc3BvbnNlXG4gICAgSG9zdC0-PkNsaWVudDogRW5jcnlwdGVkIHJlc3BvbnNlIG92ZXIgSVAiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9LCJ1cGRhdGVFZGl0b3IiOmZhbHNlfQ
+
+sequenceDiagram
+
+    participant Enclave
+    participant Cloud/Intel
+    participant Host
+    participant Client
+    participant Intel
+
+    rect rgba(255, 0, 255, 0.1)
+        Note left of Host: On initial deploy
+        Cloud/Intel->>Host: Provisioning certs
+    end
+ HotSpot->>Client: Send remote attestation
+    Note over Client: Verify measurement
+    opt Occasionally
+        Client->>Intel: Request assessment
+        Intel->>Client: Host still secure!
+    end
+    Client->>Host: Encrypted message over IP
+ HotSpot->>Enclave: Encrypted message
+    Enclave->>Host: Encrypted response
+ HotSpot->>Client: Encrypted response over IP
+
+-->
+
+<p><img alt="sequence diagram" src="images/sequence.png" /></p>
+<p>The first time SGX is used on a machine there are interactions with either the cloud provider or Intel to retrieve
+machine certificates proving authenticity. The host then gets a remote attestation (<code>EnclaveInstanceInfo</code>) to the
+client somehow, the client verifies it and optionally asks Intel if the hardware setup of the machine is still
+considered to be secure, or if there are known vulnerabilities (see <a href="renewability.html">renewability</a>). This can be
+repeated as often as the client wants, e.g. every day. Once this is done the client can send messages to the enclave
+through the host.</p>
+<h2 id="mail">Mail<a class="headerlink" href="#mail" title="Permanent link">&para;</a></h2>
+<p>Communicating with an enclave requires sending and receiving encrypted and authenticated messages. One possible approach
+is to embed a TLS stack into the enclave and use something like HTTPS, but this technique has some problems
+and limitations that are resolved via <a href="mail.html">the Conclave Mail API</a>. Mail makes communication between enclaves and
+clients easy, as well as solving common problems faced with doing application development. </p>
+<h2 id="testing-and-debugging">Testing and debugging<a class="headerlink" href="#testing-and-debugging" title="Permanent link">&para;</a></h2>
+<p>Conclave provides full unit testing support for enclaves. Enclaves themselves can be compiled for one of three modes:</p>
+<ul>
+<li><strong>Production/release</strong>: fully encrypted and protected memory.</li>
+<li><strong>Debug</strong>: the same as production, but special instructions are provided that allow enclave memory to be read and modified.
+  This mode provides no protection but is otherwise a faithful recreation of the standard environment.</li>
+<li><strong>Simulation</strong>: SGX hardware isn't actually used at all. This is helpful during development when SGX capable hardware
+  may not be available.</li>
+</ul>
+<p>The modes must match between how the enclave was compiled and how it's loaded. This is handled for you automatically.</p>
+<p>Inside the enclave <code>System.out</code> and <code>System.err</code> are wired up to the host console, but logging to files doesn't work.
+This is to avoid accidentally leaking private data to the host via logging.</p>
+<div class="admonition notice">
+<p class="admonition-title">Notice</p>
+<p>Future versions of the platform may offer encrypted logging of various forms.</p>
+</div>
+<h2 id="virtual-machines-and-performance">Virtual machines and performance<a class="headerlink" href="#virtual-machines-and-performance" title="Permanent link">&para;</a></h2>
+<p>Enclave code can run on one of two different virtual machines. Both can execute JVM bytecode. One is a small, specialised
+runtime called Avian. Avian is slow but can dynamically load bytecode, which some Java frameworks like to do. The other
+is GraalVM Native Image (SubstrateVM). The latter compiles your entire program to native code ahead of time, erasing
+any code that isn't used and optimising it as a whole. This can yield large speedups and memory usage improvements, at
+the cost of being unable to dynamically load new classes. </p>
+<p>The differences between the two runtimes is summarised by the table below:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Avian JVM</th>
+<th>GraalVM Native Image</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Execute dynamic JVM code</td>
+<td><img alt="✔" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2714.svg" title=":heavy_check_mark:" /></td>
+<td><img alt="✖" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2716.svg" title=":heavy_multiplication_x:" /><sup>*</sup></td>
+</tr>
+<tr>
+<td>Java 8 Support</td>
+<td><img alt="✔" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2714.svg" title=":heavy_check_mark:" /></td>
+<td><img alt="✔" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2714.svg" title=":heavy_check_mark:" /></td>
+</tr>
+<tr>
+<td>Java 9+ Support</td>
+<td><img alt="✖" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2716.svg" title=":heavy_multiplication_x:" /></td>
+<td><img alt="✖" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2716.svg" title=":heavy_multiplication_x:" /><sup>*</sup></td>
+</tr>
+</tbody>
+</table>
+<p><sup>* Dynamic JVM code execution and Java 9+ support using GraalVM Native Image is planned for a future release of Conclave.</sup></p>
+<p>The speedups from using Native Image can be significant. However, as the enclave environment is small the performance will
+still be lower than with a regular HotSpot JVM. This table shows the performance difference and how they vary between
+a variety of benchmarks taken from the <a href="https://salsa.debian.org/benchmarksgame-team/benchmarksgame/">Computer Language Benchmarks Game</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The "empty" benchmark is measuring the overhead of entering and exiting the enclave, without doing any
+work. As entering/exiting triggers a variety of hardware mechanisms designed to block side channel attacks this is
+naturally expensive relative to the cost of a regular function call, however, once the enclave is doing real work
+this transition cost becomes less relevant.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Benchmark</th>
+<th>Runtime</th>
+<th>Score</th>
+<th>Error</th>
+<th>Units</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>empty</td>
+<td>Avian</td>
+<td>15970.313</td>
+<td>±      837.783</td>
+<td>ops/s</td>
+</tr>
+<tr>
+<td>empty</td>
+<td>GraalVM</td>
+<td>51921.076</td>
+<td>±     1697.024</td>
+<td>ops/s</td>
+</tr>
+<tr>
+<td>empty</td>
+<td>HotSpot</td>
+<td>49453365.793</td>
+<td>±  3404118.758</td>
+<td>ops/s</td>
+</tr>
+<tr>
+<td>binary_trees</td>
+<td>Avian</td>
+<td>19.727</td>
+<td>±        0.733</td>
+<td>ops/s</td>
+</tr>
+<tr>
+<td>binary_trees</td>
+<td>GraalVM</td>
+<td>454.061</td>
+<td>±       31.089</td>
+<td>ops/s</td>
+</tr>
+<tr>
+<td>binary_trees</td>
+<td>HotSpot</td>
+<td>1758.980</td>
+<td>±       79.428</td>
+<td>ops/s</td>
+</tr>
+<tr>
+<td>fannkuch</td>
+<td>Avian</td>
+<td>0.277</td>
+<td>±        0.007</td>
+<td>ops/s</td>
+</tr>
+<tr>
+<td>fannkuch</td>
+<td>GraalVM</td>
+<td>4.181</td>
+<td>±        0.024</td>
+<td>ops/s</td>
+</tr>
+<tr>
+<td>fannkuch</td>
+<td>HotSpot</td>
+<td>5.925</td>
+<td>±        0.063</td>
+<td>ops/s</td>
+</tr>
+<tr>
+<td>fasta</td>
+<td>Avian</td>
+<td>1.692</td>
+<td>±        0.010</td>
+<td>ops/s</td>
+</tr>
+<tr>
+<td>fasta</td>
+<td>GraalVM</td>
+<td>3.185</td>
+<td>±        0.028</td>
+<td>ops/s</td>
+</tr>
+<tr>
+<td>fasta</td>
+<td>HotSpot</td>
+<td>4.022</td>
+<td>±        0.127</td>
+<td>ops/s</td>
+</tr>
+<tr>
+<td>himeno</td>
+<td>Avian</td>
+<td>0.104</td>
+<td>±        0.001</td>
+<td>ops/s</td>
+</tr>
+<tr>
+<td>himeno</td>
+<td>GraalVM</td>
+<td>0.179</td>
+<td>±        0.004</td>
+<td>ops/s</td>
+</tr>
+<tr>
+<td>himeno</td>
+<td>HotSpot</td>
+<td>0.366</td>
+<td>±        0.003</td>
+<td>ops/s</td>
+</tr>
+<tr>
+<td>mandelbrot</td>
+<td>Avian</td>
+<td>1.855</td>
+<td>±        0.861</td>
+<td>ops/s</td>
+</tr>
+<tr>
+<td>mandelbrot</td>
+<td>GraalVM</td>
+<td>5.529</td>
+<td>±        0.134</td>
+<td>ops/s</td>
+</tr>
+<tr>
+<td>mandelbrot</td>
+<td>HotSpot</td>
+<td>6.385</td>
+<td>±        0.132</td>
+<td>ops/s</td>
+</tr>
+<tr>
+<td>nbody</td>
+<td>Avian</td>
+<td>0.359</td>
+<td>±        0.004</td>
+<td>ops/s</td>
+</tr>
+<tr>
+<td>nbody</td>
+<td>GraalVM</td>
+<td>1.205</td>
+<td>±        0.021</td>
+<td>ops/s</td>
+</tr>
+<tr>
+<td>nbody</td>
+<td>HotSpot</td>
+<td>1.279</td>
+<td>±        0.017</td>
+<td>ops/s</td>
+</tr>
+<tr>
+<td>pidigits</td>
+<td>Avian</td>
+<td>0.747</td>
+<td>±        0.020</td>
+<td>ops/s</td>
+</tr>
+<tr>
+<td>pidigits</td>
+<td>GraalVM</td>
+<td>9.941</td>
+<td>±        0.185</td>
+<td>ops/s</td>
+</tr>
+<tr>
+<td>pidigits</td>
+<td>HotSpot</td>
+<td>24.722</td>
+<td>±        0.301</td>
+<td>ops/s</td>
+</tr>
+<tr>
+<td>spectral_norm</td>
+<td>Avian</td>
+<td>2.819</td>
+<td>±        1.076</td>
+<td>ops/s</td>
+</tr>
+<tr>
+<td>spectral_norm</td>
+<td>GraalVM</td>
+<td>11.923</td>
+<td>±        0.274</td>
+<td>ops/s</td>
+</tr>
+<tr>
+<td>spectral_norm</td>
+<td>HotSpot</td>
+<td>17.345</td>
+<td>±        0.930</td>
+<td>ops/s</td>
+</tr>
+</tbody>
+</table>
+<p>Higher scores are better. As you can see, GraalVM based enclaves are around 4x-12x faster than with
+Avian, depending on the task. The performance hit overall of using an enclave is also highly dependent on what exactly 
+the code is doing (primarily, memory access patterns).</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="enclaves.html" title="Enclaves" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Enclaves
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="mail.html" title="Mail" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Mail
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="assets/javascripts/bundle.5f27aba8.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: ".",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "assets/javascripts/worker/search.27c6a5e6.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

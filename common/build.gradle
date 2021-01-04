@@ -1,0 +1,13 @@
+plugins {
+    id 'org.jetbrains.kotlin.plugin.serialization' version '1.4.10'
+}
+
+dependencies {
+    api 'org.jetbrains.kotlinx:kotlinx-serialization-core:1.0.0-RC2'
+    api 'org.jetbrains.kotlinx:kotlinx-serialization-protobuf:1.0.0-RC2'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
