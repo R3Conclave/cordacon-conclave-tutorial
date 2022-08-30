@@ -25,15 +25,15 @@ internal class ConclaveGRPCMethods(val enclaveClassName: String) {
 
 private object BytesMarshaller : MethodDescriptor.Marshaller<ByteArray> {
     override fun stream(value: ByteArray) = value.inputStream()
-    override fun parse(stream: InputStream) = stream.readAllBytes()
+    override fun parse(stream: InputStream) = stream.readBytes()
 }
 
 private object EnclaveInstanceInfoMarshaller : MethodDescriptor.Marshaller<EnclaveInstanceInfo> {
     override fun stream(value: EnclaveInstanceInfo) = value.serialize().inputStream()
-    override fun parse(stream: InputStream) = EnclaveInstanceInfo.deserialize(stream.readAllBytes())
+    override fun parse(stream: InputStream) = EnclaveInstanceInfo.deserialize(stream.readBytes())
 }
 
 private object UnitMarshaller : MethodDescriptor.Marshaller<Unit> {
-    override fun stream(value: Unit): InputStream = InputStream.nullInputStream()
+    override fun stream(value: Unit): InputStream = byteArrayOf().inputStream()
     override fun parse(stream: InputStream) = Unit
 }
